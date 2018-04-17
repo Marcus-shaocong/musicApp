@@ -1,0 +1,29 @@
+<!--pages/songs/songs.wxml-->
+
+<swiper class="banner" 
+        indicator-dots="true" 
+        autoplay="true" 
+        interval="3000" 
+        duration="1000" 
+        vertical="true" 
+        circular="true">
+    <swiper-item wx:for="{{banner}}" wx:key="id">
+      <!-- <navigator url="{{item.link}}"> -->
+        <image src="{{item}}" background-size="cover" mode="aspectFit"></image>
+      <!-- </navigator> -->
+    </swiper-item>
+</swiper>
+<view class='items-list'>
+  <view class='pro-item' wx:for="{{song}}" wx:key="{{index}}" data-index='{{index}}'>
+    <view class='pro-body'>
+      <audio poster="{{item.listPicUrl}}" 
+       src="{{item.src}}" 
+       id="myAudio" 
+       controls="true"
+       name="{{item.name}}"
+       author="{{item.singer}}"
+       loop>
+      </audio>
+    </view>
+    </view>
+  </view>

@@ -1,0 +1,43 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/auth/login/login",
+    "pages/songs/songs"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "我爱音乐",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "backgroundColor": "#fafafa",
+    "borderStyle": "white",
+    "selectedColor": "#b4282d",
+    "color": "#666",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "iconPath": "images/icons/ic_menu_choice_nor.png",
+        "selectedIconPath": "/images/icons/ic_menu_choice_pressed.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/icons/ic_menu_sort_nor.png",
+        "selectedIconPath": "images/icons/ic_menu_sort_pressed.png",
+        "text": "课程"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/icons//ic_menu_me_nor.png",
+        "selectedIconPath": "images/icons/ic_menu_me_pressed.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "debug": true
+}

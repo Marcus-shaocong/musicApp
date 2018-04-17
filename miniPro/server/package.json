@@ -1,0 +1,32 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "SET PORT=6835 DEBUG=*,-express* nodemon server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "amplitude": "^3.5.0",
+    "body-parser": "^1.18.2",
+    "csvtojson": "^1.1.9",
+    "debug": "^3.1.0",
+    "debug-levels": "^0.2.0",
+    "dust": "^0.3.0",
+    "express": "^4.16.2",
+    "formidable": "^1.1.1",
+    "handlebars": "^4.0.11",
+    "js-yaml": "^3.10.0",
+    "jsonwebtoken": "^8.1.0",
+    "lodash": "^4.17.4",
+    "mkdirp": "^0.5.1",
+    "mongodb": "^2.2.31",
+    "nodemon": "^1.17.2",
+    "serve-static": "^1.13.1",
+    "underscore": "^1.8.3"
+  }
+}
