@@ -4,8 +4,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    toggleArray: ["/images/icons/play1.svg", "/images/icons/stop.svg"],
-    imageSrc: "/images/icons/play1.svg"
+    toggleArray: ["/images/icons/play-256.png", "/images/icons/pause-256.png"],
+    imageSrc: "/images/icons/play-256.png"
   },
 
   /**

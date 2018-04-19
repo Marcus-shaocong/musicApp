@@ -51,10 +51,6 @@ Page({
     }
   },
 
-  onLikeSong: function() {
-    console.log("called from --> onLikeSong()");
-  },
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -94,7 +90,7 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    console.log("called from --> onReachBottom()");
+  
   },
 
   /**

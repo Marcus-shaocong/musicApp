@@ -7,7 +7,7 @@
     <view id="progress-bar"></view>
   </view>
   <view id="title">
-    <text id="title-text">Hey Girl // Florence Welch, Lady Gaga</text>
+    <text id="title-text">温柔</text>
   </view>
   <view id="controls">
     <view id="controls-play" bindtap="play">
