@@ -49,7 +49,7 @@ banner: [
           "/images/data/8.jpg",
           "/images/data/9.jpg"
         ], // 系列相关图片
-        listPicUrl: "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523899279560&di=469892e990b844447fcc32de5f03f183&imgtype=0&src=http%3A%2F%2Fpic.baike.soso.com%2Fp%2F20140105%2F20140105080441-1948394824.jpg",
+        listPicUrl: "http://img.xiami.net/images/album/img10/3110/15644_1.jpg",
         src:"/images/mp3/wenyou.mp3"
       } 
     ]

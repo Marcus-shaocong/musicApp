@@ -1,0 +1,29 @@
+<view id="bg-before"></view>
+<view id="bg"></view>
+
+<view class="main">
+ <view id="albumCover"></view>
+   <view id="progress">
+    <view id="progress-bar"></view>
+  </view>
+  <view id="title">
+    <text id="title-text">Hey Girl // Florence Welch, Lady Gaga</text>
+  </view>
+  <view id="controls">
+    <view id="controls-play" bindtap="play">
+      <image class="control material-icons icon icon-play" src="{{imageSrc}}" mode="aspectFill"></image>
+    </view>
+    </view>
+</view>
+
+<!-- 
+ <view id="albumCover"></view>
+    <div class="control"><i class="material-icons icon">&#xE045;</i></div>
+     <div class="control"><i class="material-icons icon">&#xE044;</i></div>
+          <!-- <i class="material-icons icon icon-play">&#xE037;</i>
+      <i class="material-icons icon icon-pause">&#xE034;</i>
+      
+
+        background-image: url(http://gagadaily.com/uploads/stories/monthly_2016_09/joanne.jpg.a6d8d6fd6e671a82ae75e80925ff43d3.jpg);
+      
+      -->
