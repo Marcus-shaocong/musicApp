@@ -106,7 +106,8 @@
 .a-popular .b .right {
   float: left;
   height: 150rpx;
-  width: 456rpx;
+  width: 400rpx;
+  /* width: 456rpx; */
   display: flex;
   flex-flow: row nowrap;
 }
@@ -118,11 +119,13 @@
   justify-content: center;
   overflow: hidden;
   height: 150rpx;
-  width: 456rpx;
+  width: 400rpx;
+  /* width: 456rpx; */
 }
 
 .a-popular .b .name {
-  width: 456rpx;
+  width: 400rpx;
+  /* width: 456rpx; */
   display: block;
   color: #333;
   line-height: 50rpx;
@@ -130,7 +133,8 @@
 }
 
 .a-popular .b .desc {
-  width: 456rpx;
+  width: 400rpx;
+  /* width: 456rpx; */
   display: block;
   color: #999;
   line-height: 50rpx;
@@ -138,7 +142,8 @@
 }
 
 .a-popular .b .price {
-  width: 456rpx;
+  width: 400rpx;
+  /* width: 456rpx; */
   display: block;
   color: #b4282d;
   line-height: 50rpx;
