@@ -5,11 +5,11 @@
     "pages/logs/logs",
     "pages/auth/login/login",
     "pages/songs/songs",
-    "pages/musicplayer/player"
+    "pages/player/player"
   ],
   "window": {
     "backgroundTextStyle": "dark",
-    "navigationBarBackgroundColor": "#333",
+    "navigationBarBackgroundColor": "#FFF",
     "navigationBarTitleText": "我爱音乐",
     "navigationBarTextStyle": "black",
     "enablePullDownRefresh": true

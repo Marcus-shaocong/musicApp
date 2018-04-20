@@ -29,12 +29,12 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": 2,
 			"list": [
 				{
 					"id": 0,
 					"name": "player",
-					"pathName": "pages/musicplayer/player",
+					"pathName": "pages/player/player",
 					"query": ""
 				},
 				{
@@ -42,6 +42,12 @@
 					"name": "songs",
 					"pathName": "pages/songs/songs",
 					"query": "id=10005"
+				},
+				{
+					"id": 2,
+					"name": "home",
+					"pathName": "pages/home/home",
+					"query": ""
 				}
 			]
 		}

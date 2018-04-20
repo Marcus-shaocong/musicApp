@@ -1,9 +1,10 @@
+const Appconfig = require("../lib/AppConfig")
 module.exports={
 
   banner: [
-    { url: "http://yanxuan.nosdn.127.net/65091eebc48899298171c2eb6696fe27.jpg" },
-    { url: "http://yanxuan.nosdn.127.net/bff2e49136fcef1fd829f5036e07f116.jpg" },
-    { url: "http://yanxuan.nosdn.127.net/bff2e49136fcef1fd829f5036e07f116.jpg" }
+    { url: `${Appconfig.serverDomain}/assets/images/banner1.jpg` },
+    { url: `${Appconfig.serverDomain}/assets/images/banner2.jpg` },
+    { url: `${Appconfig.serverDomain}/assets/images/banner3.jpg` }
     ],
       hotSongs:[
         {
@@ -12,7 +13,8 @@ module.exports={
           singer: "陈奕迅",
           categoryId: 10010,
           gallery: [], // 系列相关图片
-          listPicUrl: "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=976975328,2385022262&fm=27&gp=0.jpg"
+          listPicUrl:`${Appconfig.serverDomain}/assets/images/10011.jpg`,
+          src:`${Appconfig.serverDomain}/assets/mp3/wenyou.mp3`
         },
         {
           id: 10021,
@@ -20,7 +22,8 @@ module.exports={
           singer: "邓紫棋",
           categoryId: 10020,
           gallery: [], // 系列相关图片
-          listPicUrl: "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523899412138&di=c40392fda53558085a2137fe97e268ad&imgtype=0&src=http%3A%2F%2Fupload.ct.youth.cn%2F2015%2F0725%2F1437795369215.jpg"
+          listPicUrl: `${Appconfig.serverDomain}/assets/images/10021.jpg`,
+          src:`${Appconfig.serverDomain}/assets/mp3/wenyou.mp3`
         },
         {
           id: 10031,
@@ -28,8 +31,28 @@ module.exports={
           singer: "王力宏",
           categoryId: 10030,
           gallery: [], // 系列相关图片
-          listPicUrl: "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523899279560&di=469892e990b844447fcc32de5f03f183&imgtype=0&src=http%3A%2F%2Fpic.baike.soso.com%2Fp%2F20140105%2F20140105080441-1948394824.jpg"
-        }
+          listPicUrl: `${Appconfig.serverDomain}/assets/images/10031.jpg`,
+          src:`${Appconfig.serverDomain}/assets/mp3/wenyou.mp3`
+        },
+        {
+          id: 10041,
+          name: "温柔",
+          singer: "五月天",
+          categoryId: 10030,
+          gallery: [
+            `${Appconfig.serverDomain}/assets/images/1.jpg`,
+            `${Appconfig.serverDomain}/assets/images/2.jpg`,
+            `${Appconfig.serverDomain}/assets/images/3.jpg`,
+            `${Appconfig.serverDomain}/assets/images/4.jpg`,
+            `${Appconfig.serverDomain}/assets/images/5.jpg`,
+            `${Appconfig.serverDomain}/assets/images/6.jpg`,
+            `${Appconfig.serverDomain}/assets/images/7.jpg`,
+            `${Appconfig.serverDomain}/assets/images/8.jpg`,
+            `${Appconfig.serverDomain}/assets/images/9.jpg`,
+          ], // 系列相关图片
+          listPicUrl: `${Appconfig.serverDomain}/assets/images/10051.jpeg`,
+          src:`${Appconfig.serverDomain}/assets/mp3/wenyou.mp3`
+        } 
       ],
-      title: '我爱吉他'
+      title: "MusicApp"
   }

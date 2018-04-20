@@ -2,16 +2,17 @@
 <view id="bg"></view>
 
 <view class="main">
- <view id="albumCover"></view>
-   <view id="progress">
-    <view id="progress-bar"></view>
-  </view>
-  <view id="title">
-    <text id="title-text">温柔</text>
-  </view>
+ <view id="albumCover">
+ </view>
+
+<slider color='#333' block-size='20' block-color='#333' bindchange="onChange" bindtouchstart="onTouchStart" bindtouchend="onTouchEnd" 
+max="100" min="0" value="{{curValue}}" disabled="{{canSlider}}">
+</slider>
+<text>{{curTime}}</text>
+
   <view id="controls">
     <view id="controls-play" bindtap="play">
-      <image class="control material-icons icon icon-play" src="{{imageSrc}}" mode="aspectFill"></image>
+      <image class="control" src="{{imageSrc}}" mode="aspectFill"></image>
     </view>
     </view>
 </view>

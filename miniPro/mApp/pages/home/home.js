@@ -23,6 +23,7 @@ Page({
           hotSongs: res.hotSongs,
           title: res.title
         });
+        wx.setStorageSync("data",res);
       wx.hideLoading()    
     }).catch(err=>{
       wx.hideLoading() 

@@ -1,4 +1,5 @@
 /* Color Of The Year -- https://colorganize.com/?palette=75 */
+
 body {
   background-color: #000;
   color: rgba(255, 255, 255, 0.7);
@@ -13,8 +14,7 @@ body {
   bottom: 0;
   left: 0;
   box-shadow: inset 0 0 200px #000;
-  background: url(http://gagadaily.com/uploads/stories/monthly_2016_09/joanne.jpg.a6d8d6fd6e671a82ae75e80925ff43d3.jpg) 0/cover fixed;
-  filter: blur(20px);
+  background: url(http://localhost:3000/assets/images/laddy.jpg) 0/cover fixed;
   animation: blurAni 7s infinite;
 }
 
@@ -129,7 +129,6 @@ body {
   width: 4rem;
   height: 4rem;
   border-radius: 50%;
-  border: 1px solid;
   cursor: pointer;
   display: inline-block;
   margin: 1px;
