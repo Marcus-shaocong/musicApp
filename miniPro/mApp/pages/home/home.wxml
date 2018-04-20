@@ -9,60 +9,34 @@
 <view class="a-section a-popular">
   <view class="h">
     <view>
-      <navigator url="">
+      <!-- navigator url="" -->
         <text class="txt">人气推荐</text>
-      </navigator>
+      <!-- /navigator -->
     </view>
   </view>
   <view class="b">
     <view class="item" wx:for="{{hotSongs}}" wx:for-index="index" wx:for-item="item" wx:key="id">
-      <navigator url="">
+      <view>
         <image class="img" src="{{item.listPicUrl}}" background-size="cover"></image>
         <view class="right">
           <view class="text">
             <text class="name">{{item.name}}</text>
-            <text class="desc">{{item.goods_brief}}</text>
-            <text class="price">{{item.singer}}</text>
+            <text class="singer">{{item.singer}}</text>
           </view>
         </view>
-        <navigator url="/pages/songs/songs?id={{item.id}}" style="float:left; padding: 0 15rpx 0 15rpx; margin-top: 25rpx;">
-          <image class="play-img" src="../../images/icons/address_right.png" style='width:50rpx; height:50rpx; display:block'></image>
+        <navigator class="hotsong-container" url="/pages/songs/songs?id={{item.id}}">
+          <image class="play-img hotsong-img" src="../../images/icons/address_right.png"></image>
           <view>
-            <text style="line-height: 50rpx; font-size: 30rpx;">学习</text>
+            <text class="hotsong-txt">学习</text>
           </view>
         </navigator>
-        <navigator url="" bindtap="onLikeSong" style="float:left; padding: 0 15rpx 0 15rpx; margin-top: 25rpx;">
-          <image class="like-img" src="../../images/icons/icon_collect.png" style='width:50rpx; height:50rpx; display:block'></image>
+        <view class="hotsong-container" bindtap="onLikeSong">
+          <image id="{{item.id}}" class="like-img hotsong-img" src="../../images/icons/icon_collect.png"></image>
           <view>
-            <text style="line-height: 50rpx; font-size: 30rpx">收藏</text>
+            <text class="hotsong-txt">收藏</text>
           </view>
-        </navigator>
-        <!-- <navigator url="" style="display:inline-block">
-            <image class="play-img" src="" style='width:40rpx; height:40rpx'></image>
-            <text>播放</text>
-          </navigator>
-          <navigator url="" style="display:inline-block">
-            <image class="like-img" src="" style='width:40rpx; height:40rpx'></image>
-            <text>收藏</text>
-          </navigator> -->
-      </navigator>
+        </view>
+      </view>
     </view>
   </view>
-
-
-
-  <!--
-<view class='items-list'>
-  <view class='pro-item' wx:for="{{proList}}" wx:key="{{index}}" bindtap='toDetail' data-index='{{index}}'>
-    <view class='pro-body'>
-      <audio poster="{{item.poster}}" src="{{item.src}}" id="myAudio" controls="{{false}}" loop></audio>
-      <view class='pro-title'>{{item.title}}</view>
-      <text class='pro-desc'>{{item.desc}}</text>
-    </view>
-    <view class='pro-footer'>
-      <image class='btn-detail' src='../../images/logob.png'></image>
-      <button open-type="contact" class='btn-ask'><image src='../../images/sousuo.jpg' /></button>
-    </view>
-  </view>
-  -->
 </view>

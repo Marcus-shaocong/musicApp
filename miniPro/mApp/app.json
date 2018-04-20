@@ -9,7 +9,7 @@
   ],
   "window": {
     "backgroundTextStyle": "dark",
-    "navigationBarBackgroundColor": "#333",
+    "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "我爱音乐",
     "navigationBarTextStyle": "black",
     "enablePullDownRefresh": true
