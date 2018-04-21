@@ -1,5 +1,5 @@
 // pages/musicplayer/player.js
-const musicUrl = 'https://m128.xiami.net/110/3110/15644/373969_26413_l.mp3?auth_key=1524798000-0-0-73449dc7d365269744a1362844087f12'
+const app = getApp();
 Page({
   /**
    * 页面的初始数据
@@ -10,23 +10,32 @@ Page({
     playState: false,
     curTime:'00:00',
     audioContext:'',
-    curValue:''
+    curValue:'',
+    bgUrl:""
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    let that = this;
     let data = wx.getStorageSync("data")
-    console.log("data", options)
+    
+    console.log("options", options)
     console.log("data", data);
     let song = data.hotSongs.filter(item => {
       console.log("options.id", options.id)
       return item.id == options.id;
     });    
     console.log("song", song);
+    console.log("laddy", `${app.globalData.domainName}/assets/images/laddy.jpg`);
     this.data.audioContext = wx.createInnerAudioContext();
+    this.data.audioContext.obeyMuteSwitch = false;
+    this.data.audioContext.autoplay = true;
     this.data.audioContext.src = song[0].src;
+    that.setData({
+      bgUrl: `${app.globalData.domainName}/assets/images/laddy.jpg`
+    })
   },
   
   onTimeUpdate: function(opts){
@@ -36,7 +45,7 @@ Page({
       //console.log("onTimeUpdate", res)
       //console.log('onTimeUpdate curTime', audioContext.currentTime)
       let value = Math.round(audioContext.currentTime * 100 / audioContext.duration);
-      console.log("value is", value);
+      //console.log("value is", value);
       that.setData({ curValue: value, curTime: that.formatTime(audioContext.currentTime) });
     })
   },
@@ -85,8 +94,16 @@ Page({
 
   audioContext.onPlay((res) => {
     console.log('onPlay', res)
+    wx.hideLoading();
     console.log('onPlay curTime', audioContext.currentTime)
     console.log('onPlay duration', audioContext.duration)
+  })
+
+  audioContext.onWaiting((res) => {
+    console.log('onWaiting', res)
+    wx.showLoading({
+      title: '正在加载.....',
+    })
   })
 
   audioContext.onError((res) => {

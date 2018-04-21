@@ -5,11 +5,12 @@
     "pages/logs/logs",
     "pages/auth/login/login",
     "pages/songs/songs",
-    "pages/player/player"
+    "pages/player/player",
+    "pages/playbg/playbg"
   ],
   "window": {
     "backgroundTextStyle": "dark",
-    "navigationBarBackgroundColor": "#FFF",
+    "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "我爱音乐",
     "navigationBarTextStyle": "black",
     "enablePullDownRefresh": true
@@ -34,7 +35,7 @@
       },
       {
         "pagePath": "pages/index/index",
-        "iconPath": "images/icons//ic_menu_me_nor.png",
+        "iconPath": "images/icons/ic_menu_me_nor.png",
         "selectedIconPath": "images/icons/ic_menu_me_pressed.png",
         "text": "我的"
       }

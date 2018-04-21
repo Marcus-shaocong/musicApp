@@ -16,15 +16,3 @@ max="100" min="0" value="{{curValue}}" disabled="{{canSlider}}">
     </view>
     </view>
 </view>
-
-<!-- 
- <view id="albumCover"></view>
-    <div class="control"><i class="material-icons icon">&#xE045;</i></div>
-     <div class="control"><i class="material-icons icon">&#xE044;</i></div>
-          <!-- <i class="material-icons icon icon-play">&#xE037;</i>
-      <i class="material-icons icon icon-pause">&#xE034;</i>
-      
-
-        background-image: url(http://gagadaily.com/uploads/stories/monthly_2016_09/joanne.jpg.a6d8d6fd6e671a82ae75e80925ff43d3.jpg);
-      
-      -->

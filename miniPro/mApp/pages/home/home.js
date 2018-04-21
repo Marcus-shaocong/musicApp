@@ -16,6 +16,31 @@ Page({
 
   getIndexData: function () {
     let that = this;
+    wx.request({
+      url: api.IndexUrl,
+      method: 'POST',
+      header:{
+        'content-type':'application/json'
+      },
+      success: function (res) {
+        console.log("res", res)
+        that.setData({
+          banner: res.data.banner,
+          hotSongs: res.data.hotSongs,
+          title: res.data.title
+        });
+        wx.setStorageSync("data", res.data);
+        wx.hideLoading() 
+      },
+      fail: function (err) {
+        wx.hideLoading()
+        util.showErrorToast("加载失败...")
+        console.log("err", err);
+      }
+    })
+
+/*
+    let that = this;
     util.request(api.IndexUrl,{}, 'POST').then(function (res) {
       console.log("getIndexData", res);
       that.setData({
@@ -29,13 +54,30 @@ Page({
       wx.hideLoading() 
       util.showErrorToast("加载失败...")
       console.log("err", err);
-    });
+    });*/
   },
+
+/**
+ * Hot song like event
+ */
+  onLikeSong: function (event) {
+    console.log("called from --> hot song like event");
+    var itemid = event.target.id
+    var query = wx.createSelectorQuery();
+    console.log(query.select("'#" + itemid + "'"));
+    // 提前准备好 每个hot song 对应的 image url属性
+    // 点击like，使用setData来换image
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     var that = this;
+    /*
+    wx.setEnableDebug({
+      enableDebug: true,
+    });*/
     let fromLocal = app.globalData.useLocal;
     console.log("localData", localData);
     if(fromLocal){
@@ -48,7 +90,7 @@ Page({
       wx.showLoading({
         title: '正在加载.....',
       })
-      this.getIndexData();
+      that.getIndexData();
     }
   },
 
