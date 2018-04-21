@@ -1,9 +1,9 @@
 module.exports={
 
 banner: [
-  { url: "http://yanxuan.nosdn.127.net/65091eebc48899298171c2eb6696fe27.jpg" },
-  { url: "http://yanxuan.nosdn.127.net/bff2e49136fcef1fd829f5036e07f116.jpg" },
-  { url: "http://yanxuan.nosdn.127.net/bff2e49136fcef1fd829f5036e07f116.jpg" }
+  { url: "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1524240261220&di=54504a8b4f17f04f49956243b5ca2615&imgtype=0&src=http%3A%2F%2Fpic111.nipic.com%2Ffile%2F20161012%2F20180988_122739592000_2.jpg" },
+  { url: "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1524240374344&di=429f7a323b5bb5f944a954785a4ff1f0&imgtype=0&src=http%3A%2F%2Fimg11.weikeimg.com%2Fdata%2Fuploads%2F2015%2F03%2F26%2F209159765513cb179c0a1.jpg" },
+  { url: "http://img.daimg.com/uploads/allimg/180314/1-1P314222646.jpg" }
   ],
     hotSongs:[
       {

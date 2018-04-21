@@ -56,6 +56,19 @@ Page({
       console.log("err", err);
     });*/
   },
+
+/**
+ * Hot song like event
+ */
+  onLikeSong: function (event) {
+    console.log("called from --> hot song like event");
+    var itemid = event.target.id
+    var query = wx.createSelectorQuery();
+    console.log(query.select("'#" + itemid + "'"));
+    // 提前准备好 每个hot song 对应的 image url属性
+    // 点击like，使用setData来换image
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
