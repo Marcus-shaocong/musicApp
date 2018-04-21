@@ -1,3 +1,4 @@
+/*
 .log-list {
   display: flex;
   flex-direction: column;
@@ -8,8 +9,6 @@
 }
 
 
-/////save the player css 
-/* Color Of The Year -- https://colorganize.com/?palette=75 */
 body {
   background-color: #000;
   color: rgba(255, 255, 255, 0.7);
@@ -180,3 +179,4 @@ body {
 #controls-play.play .icon-play {
   display: none;
 }
+*/

@@ -34,7 +34,7 @@
       },
       {
         "pagePath": "pages/index/index",
-        "iconPath": "images/icons//ic_menu_me_nor.png",
+        "iconPath": "images/icons/ic_menu_me_nor.png",
         "selectedIconPath": "images/icons/ic_menu_me_pressed.png",
         "text": "我的"
       }

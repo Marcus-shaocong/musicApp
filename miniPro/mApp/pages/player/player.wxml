@@ -1,4 +1,4 @@
-<view id="bg-before"></view>
+<view id="bg-before" style="background:url({{bgUrl}}) 0/cover fixed"></view>
 <view id="bg"></view>
 
 <view class="main">

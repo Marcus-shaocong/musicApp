@@ -35,6 +35,7 @@ App({
   },
   globalData: {
     userInfo: null,
-    useLocal: false
+    useLocal: false,
+    domainName:"https://xinjushi.xyz"
   }
 })
