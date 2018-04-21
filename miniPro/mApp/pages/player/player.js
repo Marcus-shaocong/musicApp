@@ -30,6 +30,8 @@ Page({
     console.log("song", song);
     console.log("laddy", `${app.globalData.domainName}/assets/images/laddy.jpg`);
     this.data.audioContext = wx.createInnerAudioContext();
+    this.data.audioContext.obeyMuteSwitch = false;
+    this.data.audioContext.autoplay = true;
     this.data.audioContext.src = song[0].src;
     that.setData({
       bgUrl: `${app.globalData.domainName}/assets/images/laddy.jpg`

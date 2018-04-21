@@ -25,7 +25,7 @@
             <text class="price">{{item.singer}}</text>
           </view>
         </view>
-        <navigator url="/pages/player/player?id={{item.id}}" style="float:left; padding: 0 15rpx 0 15rpx; margin-top: 25rpx;">
+        <navigator url="/pages/playbg/playbg?id={{item.id}}" style="float:left; padding: 0 15rpx 0 15rpx; margin-top: 25rpx;" open-type="redirect">
           <image class="play-img" src="../../images/icons/address_right.png" style='width:50rpx; height:50rpx; display:block'></image>
           <view>
             <text style="line-height: 50rpx; font-size: 30rpx;">学习</text>

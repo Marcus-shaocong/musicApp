@@ -48,6 +48,12 @@
 					"name": "home",
 					"pathName": "pages/home/home",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "playbg",
+					"pathName": "pages/playbg/playbg",
+					"query": ""
 				}
 			]
 		}

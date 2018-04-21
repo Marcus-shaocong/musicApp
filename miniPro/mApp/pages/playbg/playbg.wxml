@@ -1,0 +1,18 @@
+<view id="bg-before" style="background:url({{bgUrl}}) 0/cover fixed"></view>
+<view id="bg"></view>
+
+<view class="main">
+ <view id="albumCover">
+ </view>
+
+<slider color='#333' block-size='20' block-color='#333' bindchange="onChange" bindtouchstart="onTouchStart" bindtouchend="onTouchEnd" 
+max="100" min="0" value="{{curValue}}" disabled="{{canSlider}}">
+</slider>
+<text>{{curTime}}</text>
+
+  <view id="controls">
+    <view id="controls-play" bindtap="play">
+      <image class="control" src="{{imageSrc}}" mode="aspectFill"></image>
+    </view>
+    </view>
+</view>
