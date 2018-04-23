@@ -1,5 +1,15 @@
-// pages/musicplayer/player.js
 const app = getApp();
+const images = [
+  "/images/data/1.jpg",
+  "/images/data/2.jpg",
+  "/images/data/3.jpg",
+  "/images/data/4.jpg",
+  "/images/data/5.jpg",
+  "/images/data/6.jpg",
+  "/images/data/7.jpg",
+  "/images/data/8.jpg",
+  "/images/data/9.jpg"
+];
 Page({
   /**
    * 页面的初始数据
@@ -7,14 +17,33 @@ Page({
   data: {
     toggleArray: ["/images/icons/play-256.png", "/images/icons/pause-256.png"],
     imageSrc: "/images/icons/play-256.png",
+    scores:[],
     playUrl:"",
     playState: false,
     curTime: '00:00',
     audioContext: '',
     curValue: '',
-    bgUrl: ""
+    bgUrl: "",
+    scoreUrl:"",
+    animation:{},
+    animationData:""
   },
 
+  swiper: function (dur) {
+    console.log("swiper", dur);
+    let that = this;
+    let animation = wx.createAnimation({
+      duration: 500,
+      timingFunction: 'linear',
+      transformOrigin:"-100%,-100%, 0"
+    })
+    animation.translateY(-500).step({ duration: dur })
+    //animation.rotate(90).step();
+
+    this.setData({
+      animationData: animation.export()
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -27,12 +56,16 @@ Page({
       console.log("options.id", options.id)
       return item.id == options.id;
     });
-    console.log("song", song);
+    console.log("song", song[0].gallery[0]);
     console.log("laddy", `${app.globalData.domainName}/assets/images/laddy.jpg`);
-    this.setData({
+    //let songSrc = "https://xinjushi.xyz/assets/mp3/wenyou.mp3"
+    that.setData({
       bgUrl: `${app.globalData.domainName}/assets/images/laddy.jpg`,
-      playUrl: song[0].src
+      playUrl: song[0].src,
+      scores: song[0].gallery,
+      scoreUrl:images[0]
     })
+    //this.swiper()
   },
 
   onTimeUpdate: function (opts) {
@@ -49,11 +82,26 @@ Page({
     audioContext.onEnded(res=>{
       console.log("onEnded");
     });
+
+    audioContext.onPlay(res => {
+      let audioContext = wx.getBackgroundAudioManager();
+      console.log(" duration onPlay", audioContext.duration);
+    });
     wx.onBackgroundAudioStop(res=>{
       console.log("stop")
       that.setData({
         imageSrc: that.data.toggleArray[0]
       })
+    })
+    audioContext.onCanplay(res => {
+      let audioContext = wx.getBackgroundAudioManager();
+      console.log(" duration onCanplay", audioContext.duration);
+      that.swiper(audioContext.duration * 1000/4);
+    });
+    wx.onBackgroundAudioPlay(res => {
+      console.log("onBackgroundAudioPlay", res)
+      let audioContext = wx.getBackgroundAudioManager();
+      console.log(" onBackgroundAudioPlay duration", audioContext.duration);
     })
   },
 
@@ -103,6 +151,7 @@ Page({
       wx.pauseBackgroundAudio()
     }
 
+    console.log("duration", audioContext.duration);
     wx.onBackgroundAudioPlay((res) => {
       console.log('onPlay', res)
       wx.hideLoading();
@@ -117,6 +166,7 @@ Page({
         title: '正在加载.....',
       })*/
     })
+    
   },
 
   formatTime: (time) => {
@@ -153,8 +203,7 @@ Page({
    */
   onUnload: function () {
     console.log("onUnload");
-    let that = this;
-    that.data.audioContext.destroy();
+    wx.stopBackgroundAudio();
   },
 
   /**

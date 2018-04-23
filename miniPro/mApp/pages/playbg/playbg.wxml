@@ -1,18 +1,44 @@
-<view id="bg-before" style="background:url({{bgUrl}}) 0/cover fixed"></view>
-<view id="bg"></view>
 
-<view class="main">
+<!-- <view id="bg-before" style="background:url({{bgUrl}}) 0/cover fixed"></view> -->
+
+<view id="main" style="background:url({{bgUrl}}) 0/cover fixed">
+<view class=".albumContainer">
  <view id="albumCover">
+ <!--
+      <swiper class="list" indicator-dots="true" interval="8000" duration="8000" vertical="true">
+        <swiper-item wx:for="{{scores}}" wx:key="id" class="list">
+          <image class="swider-img" src="{{item}}" mode="aspectFit"></image>
+        </swiper-item>
+      </swiper> 
+
+  <movable-area class="move-area" style="height: 500px;width: 300px; position:relative; overflow:hidden " >
+    
+    <movable-view class="move-view"style="height: 400px;width: 300px; position:relative; overflow:hidden"direction="all">
+
+ 
+    </movable-view>
+  </movable-area>      
+-->
+        <scroll-view scroll-y wx:for="{{scores}}" wx:key="id" class="list">
+        <image class="swider-img" src="{{item}}" mode="widthFix" animation="{{animationData}}" style="display {{item.display}}"></image>
+        </scroll-view>
+
  </view>
+</view>
 
-<slider color='#333' block-size='20' block-color='#333' bindchange="onChange" bindtouchstart="onTouchStart" bindtouchend="onTouchEnd" 
-max="100" min="0" value="{{curValue}}" disabled="{{canSlider}}">
-</slider>
-<text>{{curTime}}</text>
 
+<view class='player'>
+  <slider color='#333' block-size='20' block-color='#333' bindchange="onChange" bindtouchstart="onTouchStart" bindtouchend="onTouchEnd" 
+  max="100" min="0" value="{{curValue}}" disabled="{{canSlider}}" class="slider-view">
+    </slider>
   <view id="controls">
+    <text class="player-text">{{curTime}}</text>
     <view id="controls-play" bindtap="play">
       <image class="control" src="{{imageSrc}}" mode="aspectFill"></image>
     </view>
     </view>
+  </view>
 </view>
+
+
+

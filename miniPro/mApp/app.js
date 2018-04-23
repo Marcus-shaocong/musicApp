@@ -37,5 +37,6 @@ App({
     userInfo: null,
     useLocal: false,
     domainName:"https://xinjushi.xyz"
+    //domainName: "http://localhost:3000"
   }
 })

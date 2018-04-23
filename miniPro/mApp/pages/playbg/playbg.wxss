@@ -1,21 +1,16 @@
 /* Color Of The Year -- https://colorganize.com/?palette=75 */
-
-body {
-  background-color: #000;
-  color: rgba(255, 255, 255, 0.7);
-  font-family: 'Montserrat', sans-serif;
-  cursor: default;
-}
-
 #bg-before {
   position: fixed;
+  height:1300rpx;
+  width: 750rpx;
+  overflow: hidden;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
   box-shadow: inset 0 0 200px #000;
   /*background: url(http://localhost:3000/assets/images/laddy.jpg) 0/cover fixed;*/
-  animation: blurAni 7s infinite;
+  /*animation: blurAni 7s infinite;*/
 }
 
 #bg {
@@ -59,23 +54,46 @@ body {
     background-color: rgba(0, 0, 0, 0.9);
   }
 }
-.main {
-  position: absolute;
-  top: 2rem;
-  right: 0;
-  left: 0;
-  bottom: 2rem;
-  padding: 0 calc(50% - 10rem);
+
+#main {
+  position: relative;
   text-align: center;
+  height:100%;
+  width:100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  box-shadow: inset 0 0 200px #000  
+}
+
+.swider-img{
+justify-content: center;
+height: 300rpx;
+width:90%;
+opacity: 0.8;
+}
+
+.albumContainer{
+  height:1000rpx;
+  width:100%;
+}
+
+.container{
+  height: 333rpx;
+  width: 100%;
 }
 
 #albumCover {
-  width: 100%;
-  height: 20rem;
+  position: relative;
+  width:90%;
+  height: 1000rpx;
   background-size: cover;
   display: inline-block;
   box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.5);
-  animation: blurAni
 }
 
 #progress {
@@ -83,23 +101,6 @@ body {
   background-color: rgba(142, 166, 208, 0.2);
 }
 
-#progress-bar {
-  width: 0%;
-  height: .4rem;
-  background-color: #F7CAC9;
-}
-#progress-bar.play {
-  animation: progress-bar 240s infinite;
-}
-
-@keyframes progress-bar {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 100%;
-  }
-}
 #title {
   margin: 1rem 0;
   width: 100%;
@@ -120,10 +121,24 @@ body {
   }
 }
 #controls {
-  display: flex;
+  position: relative;
+  display: inline-block;
   align-items: center;
   justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+   margin: 1px;
 }
+
+.list{
+  height:1000rpx;
+  opacity: 0.8;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
 
 .control {
   width: 4rem;
@@ -131,9 +146,14 @@ body {
   border-radius: 50%;
   cursor: pointer;
   display: inline-block;
+  align-items: center;
+  justify-content: center;  
   margin: 1px;
   transition: transform .3s, box-shadow .5s, text-shadow .5s;
+  position: relative;
+  bottom:0rpx;
 }
+
 .control:hover, .control:focus {
   color: #fff;
   transform: scale(1.05);
@@ -149,6 +169,7 @@ body {
   font-size: 2.7rem;
 }
 
+/*
 #controls-play {
   width: 4rem;
   height: 4rem;
@@ -165,4 +186,17 @@ body {
 }
 #controls-play.play .icon-play {
   display: none;
+}*/
+
+.player-text{
+  justify-content: center;  
+  display: inline-flex;
+}
+.player{
+  width:100%;
+  height:333rpx;
+}
+.slider-view{
+  width:100%;
+  position: relative;
 }
