@@ -10,7 +10,7 @@
   <view class="h">
     <view>
       <!-- navigator url="" -->
-        <text class="txt">人气推荐</text>
+      <text class="txt">人气推荐</text>
       <!-- /navigator -->
     </view>
   </view>
@@ -30,10 +30,10 @@
             <text class="hotsong-txt">学习</text>
           </view>
         </navigator>
-        <view class="hotsong-container" bindtap="onLikeSong">
-          <image id="{{item.id}}" class="like-img hotsong-img" src="../../images/icons/icon_collect.png"></image>
-          <view>
-            <text class="hotsong-txt">收藏</text>
+        <view class="hotsong-container" bindtap="onLikeSong" data-img-index="{{index}}" data-is-collected="{{array[index].isCollected}}">
+          <image id="{{item.id}}" class="like-img hotsong-img" src="{{array[index].imgSrc}}"></image>
+          <view class="hotsong-txt-box">
+            <text class="hotsong-txt">{{array[index].likeText}}</text>
           </view>
         </view>
       </view>
