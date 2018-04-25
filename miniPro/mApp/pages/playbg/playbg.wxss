@@ -69,11 +69,39 @@
   left: 0;
   box-shadow: inset 0 0 200px #000  
 }
+.image-list{
+display: flex;
+flex-direction: column;
+}
+.swider-img1{
+position: relative;
+justify-content: center;
+height: 380rpx;
+width:100%;
+opacity: 0.8;
+bottom: 0;
+}
 
-.swider-img{
+.place-holder{
+position: relative;
 justify-content: center;
 height: 300rpx;
-width:90%;
+width:100%;
+opacity: 0.8;
+}
+
+.swider-img2{
+
+justify-content: center;
+height: 300rpx;
+width:100%;
+opacity: 0.8;
+}
+
+.swider-img3{
+justify-content: center;
+height: 300rpx;
+width:100%;
 opacity: 0.8;
 }
 
