@@ -1,5 +1,5 @@
 let AppConfig = {
-    serverDomain: "http://localHost:3000"
+    serverDomain: "http://xinjushi.xyz"
 }
 
 module.exports = AppConfig

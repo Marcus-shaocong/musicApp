@@ -53,6 +53,7 @@ async function startUp() {
   // app.use(serveStatic('./public', {'index': ['index.html']}))
   app.use(serveStatic(path.join(__dirname, 'public')))
   app.use('/assets', express.static(path.join(__dirname, 'assets')))
+  app.use('/.well-known', express.static(path.join(__dirname, 'assets')))
 
   app.listen(port, function () {
     console.log('musicApp server listening on port ', port)
