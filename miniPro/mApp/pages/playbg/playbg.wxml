@@ -17,11 +17,24 @@
 
  
     </movable-view>
-  </movable-area>      
--->
-        <scroll-view scroll-y wx:for="{{scores}}" wx:key="id" class="list">
-        <image class="swider-img" src="{{item}}" mode="widthFix" animation="{{animationData}}" style="display {{item.display}}"></image>
+  </movable-area> 
+        <scroll-view scroll-y class="list">
+        <view class="image-list">
+        <image class="swider-img1" src="{{image1}}" mode="widthFix" animation="{{animationData1}}" style="animation-play-state: {{aniState}}; -webkit-animation-play-state:{{aniState}};-moz-animation-play-state:{{aniState}}; -o-animation-play-state:{{aniState}};  ">
+        </image>
+          </view>
         </scroll-view>
+
+
+-->
+<view class='place-holder'>
+</view>
+       <swiper class="list" 
+       interval="{{swiperItr}}" indicator-dots="{{false}}" duration="{{musicDuration}}" vertical="{{true}}" autoplay="{{autop}}" class='swider-img1' circular="{{true}}" next-margin='8px' >
+        <swiper-item  wx:for="{{scores}}" wx:key="id">
+          <image class="swider-img1" src="{{item}}" mode="widthFix" animation="{{animationData1}}"></image>
+        </swiper-item>
+      </swiper>
 
  </view>
 </view>
