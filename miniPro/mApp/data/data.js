@@ -52,5 +52,16 @@ banner: [
         listPicUrl: "http://img.xiami.net/images/album/img10/3110/15644_1.jpg",
         src:"/images/mp3/wenyou.mp3"
       } 
+    ],
+    playbgData:[
+      { time: 10.502, image: "/images/data/1.jpg" },
+      { time: 11.1, image: "/images/data/2.jpg" },
+      { time: 16.262, image: "/images/data/3.jpg" },
+      { time: 19.563, image: "/images/data/4.jpg" },
+      { time: 22.968, image: "/images/data/5.jpg" },
+      { time: 25.883, image: "/images/data/6.jpg" },
+      { time: 28.384, image: "/images/data/7.jpg" },
+      { time: 31.557, image: "/images/data/8.jpg" },
+      { time: 35.181, image: "/images/data/9.jpg" },
     ]
 }

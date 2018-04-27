@@ -4,6 +4,7 @@
 <view id="main" style="background:url({{bgUrl}}) 0/cover fixed">
 <view class=".albumContainer">
  <view id="albumCover">
+
  <!--
       <swiper class="list" indicator-dots="true" interval="8000" duration="8000" vertical="true">
         <swiper-item wx:for="{{scores}}" wx:key="id" class="list">
@@ -25,20 +26,43 @@
           </view>
         </scroll-view>
 
+                  <image class="swider-img1" src="{{image2}}" mode="widthFix" animation="{{animationData2}}"></image>
+          <image class="swider-img1" src="{{image3}}" mode="widthFix" animation="{{animationData3}}"></image>
 
--->
 <view class='place-holder'>
 </view>
-       <swiper class="list" 
-       interval="{{swiperItr}}" indicator-dots="{{false}}" duration="{{musicDuration}}" vertical="{{true}}" autoplay="{{autop}}" class='swider-img1' circular="{{true}}" next-margin='8px' >
-        <swiper-item  wx:for="{{scores}}" wx:key="id">
-          <image class="swider-img1" src="{{item}}" mode="widthFix" animation="{{animationData1}}"></image>
+       <swiper
+       interval="{{swiperItr}}" 
+       indicator-dots="{{false}}" 
+       duration="{{musicDuration}}" 
+       vertical="true" 
+       autoplay="{{autop}}" 
+       current='{{activateIndex}}'
+       class='swiper-container' circular="true" previous-margin='0px'
+       bindchange="bingchange"
+       >
+        <swiper-item >
+          <image class="swider-img1" src="{{image1}}" mode="widthFix" ></image>
+        </swiper-item>
+                <swiper-item >
+           <image class="swider-img2" src="{{image2}}" mode="widthFix" animation="{{animationData1}}"></image>
+        </swiper-item>
+                <swiper-item >
+           <image class="swider-img3" src="{{image3}}" mode="widthFix"></image>
         </swiper-item>
       </swiper>
 
  </view>
+-->
+<view class='place-holder'>
 </view>
-
+  <scroll-view class=".image-list">
+  <image class="swider-img1" src="{{image1}}" mode="widthFix" animation="{{animationData1}}"></image>
+  <image class="swider-img2" src="{{image2}}" mode="widthFix" animation="{{animationData1}}"></image>
+  <image class="swider-img3" src="{{image3}}" mode="widthFix" animation="{{animationData1}}"></image>
+  </scroll-view>
+</view>
+</view>
 
 <view class='player'>
   <slider color='#333' block-size='20' block-color='#333' bindchange="onChange" bindtouchstart="onTouchStart" bindtouchend="onTouchEnd" 

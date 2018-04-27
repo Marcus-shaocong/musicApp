@@ -1,16 +1,6 @@
+const localData = require("../../data/data")
 const app = getApp();
-const imageTime = [13.0,17.0,18.0,19.0,23.0,25.0, 28.0,29.0,37.0 ];
-const images = [
-  "/images/data/1.jpg",
-  "/images/data/2.jpg",
-  "/images/data/3.jpg",
-  "/images/data/4.jpg",
-  "/images/data/5.jpg",
-  "/images/data/6.jpg",
-  "/images/data/7.jpg",
-  "/images/data/8.jpg",
-  "/images/data/9.jpg"
-];
+
 Page({
   /**
    * 页面的初始数据
@@ -34,10 +24,13 @@ Page({
     animationData1:"",
     step:0,
     alreadyStart:false,
-    swiperItr:800,
-    musicPrefixTime:4,
+    swiperItr:6000,
+    musicPrefixTime:3,
     musicDuration: 6000,
     autop:false,
+    imageData:[],
+    activateIndex:1,
+    opac:0.8
   },
 
   swiper: function (dur, degree) {
@@ -74,12 +67,11 @@ Page({
     console.log('musicDur', that.data.musicDuration)
     let animation = wx.createAnimation({
       duration: 500,
-      timingFunction: 'step-start',
-      transformOrigin: "-50% -50%",
+      timingFunction: 'ease',
     })
-    animation.translateY(300).step({duration:500})
-    animation.translateY(-300).step({ duration: that.data.musicDuration })
-
+    //animation.translateY(100).translateY(-50).step({ duration: 50 })
+    animation.scale(2, 2).step({ duration: 100 })
+    animation.scale(1, 1).step({ duration: 100 })
     this.setData({
       animationData1: animation.export(),
     })
@@ -92,7 +84,7 @@ Page({
       duration: 500,
       timingFunction: 'step-end',
     })
-    animation.translateY(1).step({ duration: 500 })
+    animation.translateY(100).step({ duration: 500 })
     //animation.rotate(90).step();
 
     this.setData({
@@ -111,16 +103,17 @@ Page({
       console.log("options.id", options.id)
       return item.id == options.id;
     });
-    console.log("song", song[0].gallery[0]);
+    console.log("song", song[0].gallery);
     console.log("laddy", `${app.globalData.domainName}/assets/images/laddy.jpg`);
     //let songSrc = "https://xinjushi.xyz/assets/mp3/wenyou.mp3"
     that.setData({
       bgUrl: `${app.globalData.domainName}/assets/images/laddy.jpg`,
       playUrl: song[0].src,
-      scoreUrl:images[0],
-      image1: song[0].gallery[0],
+      image2: song[0].gallery[0].image,
+      image3: song[0].gallery[1].image,
       scores:song[0].gallery,
-      musicPrefixTime:4
+      musicPrefixTime:4,
+      imageData: song[0].gallery
     });
     that.swiper();
   },
@@ -138,12 +131,31 @@ Page({
     return index;
   },
 
+  getIndex: function (curTime) {
+    let that = this;
+    console.log("imageData", that);
+    let d = 0;
+    if (0 == that.data.imageData.length)
+      return d;
+    for (let e = 0, f = that.data.imageData.length; f > e; e++) {
+      if (Number(curTime) < Number(that.data.imageData[e].time)) {
+        d = e - 1;
+        break
+      }
+      if (curTime > that.data.imageData[f - 1].time) {
+        d = f - 1;
+        break
+      }
+    }
+    return d = -1 == d ? 0 : d
+  },  
+
   onTimeUpdate: function (opts) {
     let that = this;
     let audioContext = wx.getBackgroundAudioManager();
     audioContext.onTimeUpdate((res) => {
       console.log("onTimeUpdate", res)
-      console.log('onTimeUpdate curTime', audioContext.currentTime)
+      console.log('ix onTimeUpdate curTime', audioContext.currentTime)
       console.log('onTimeUpdate duration', audioContext.duration)
       let value = Math.round(audioContext.currentTime * 100 / audioContext.duration);
       console.log("value is", value);
@@ -155,15 +167,26 @@ Page({
         that.setData({ activeIndex: imageInx });
       }*/
            
-      if (!that.data.autop && !that.data.alreadyStart){
-        console.log("prefixtime", that.data.musicPrefixTime );
-        if (Number(audioContext.currentTime) > Number(that.data.musicPrefixTime))
-        {
-          console.log("Ready to go");
-          that.setData({
-            musicDuration: audioContext.duration * 1000 / 6,
-            autop:true, alreadyStart: true});
+      console.log("imageUrl", that.data.image1);
+      let ix = that.getIndex(audioContext.currentTime);
+      let dataLen = that.data.imageData.length;
+      console.log("ix", ix, that.data.imageData[ix]);
+      if (that.data.image2 != that.data.imageData[ix].image) {
+        console.log("len", that.data.imageData.length )
+       //console.log("debuglog", ix, that.data.imageData[ix + 1].image, that.data.imageData[ix - 1].image)
+        let image3Data = ix+1 >= that.data.imageData.length ? "" : that.data.imageData[ix+1].image;
+        let image1Data = ix - 1 < 0? "" : that.data.imageData[ix-1].image;
+        console.log("image1Data", image1Data, image3Data);
+        that.setData({
+          image1: image1Data,
+          image2: that.data.imageData[ix].image,
+          image3: image3Data,
+          opac:0.8
+        });
+        if (image1Data != ""){
+          that.onMove();
         }
+        
       }
     })
     audioContext.onEnded(res=>{
@@ -303,6 +326,18 @@ Page({
 
   bingchange:function(e){
     console.log('bingchange', e);
+    let that = this;
+    /*
+    let audioContext = wx.getBackgroundAudioManager();
+    console.log("imageUrl", that.data.image1);
+    let ix = that.getIndex(audioContext.currentTime);
+    console.log("ix", ix, that.data.imageData[ix]);
+    if(that.data.image1 != that.data.imageData[ix])
+    {
+      that.setData({
+        image1: that.data.imageData[ix]
+      })
+    }*/
   },
 
   /**

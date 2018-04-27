@@ -73,28 +73,35 @@
 display: flex;
 flex-direction: column;
 }
-.swider-img1{
-position: relative;
-justify-content: center;
-height: 380rpx;
-width:100%;
-opacity: 0.8;
-bottom: 0;
+
+.swiper-container{
+  display: flex;
+  flex-direction: column;
+  height: 500rpx;
+  width:100%;
 }
 
 .place-holder{
+position: absolute;
+justify-content: center;
+height: 200rpx;
+width:100%;
+}
+
+.swider-img1{
 position: relative;
 justify-content: center;
 height: 300rpx;
 width:100%;
-opacity: 0.8;
+opacity: 0.1;
+overflow: visible;
 }
 
 .swider-img2{
-
 justify-content: center;
 height: 300rpx;
 width:100%;
+overflow: visible;
 opacity: 0.8;
 }
 
@@ -102,7 +109,8 @@ opacity: 0.8;
 justify-content: center;
 height: 300rpx;
 width:100%;
-opacity: 0.8;
+opacity: 0.1;
+overflow: visible;
 }
 
 .albumContainer{
@@ -142,10 +150,10 @@ opacity: 0.8;
 
 @keyframes scrolling-text {
   from {
-    transform: translateX(100%);
+    transform: translateY(100%);
   }
   to {
-    transform: translateX(-100%);
+    transform: translateY(-100%);
   }
 }
 #controls {
