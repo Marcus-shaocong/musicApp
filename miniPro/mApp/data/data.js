@@ -70,22 +70,22 @@ module.exports = {
    */
   array: [
     {
-      imgSrc: "../../images/icons/icon_collect.png",
+      imgSrc: "../../images/icons/attention.png",
       likeText: "收藏",
       isCollected: false
     },
     {
-      imgSrc: "../../images/icons/icon_collect_checked.png",
+      imgSrc: "../../images/icons/attentionT.png",
       likeText: "已收藏",
       isCollected: true
     },
     {
-      imgSrc: "../../images/icons/icon_collect.png",
+      imgSrc: "../../images/icons/attention.png",
       likeText: "收藏",
       isCollected: false
     },
     {
-      imgSrc: "../../images/icons/icon_collect.png",
+      imgSrc: "../../images/icons/attention.png",
       likeText: "收藏",
       isCollected: false
     }

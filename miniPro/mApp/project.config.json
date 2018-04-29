@@ -29,7 +29,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": 2,
 			"list": [
 				{
 					"id": 0,
@@ -42,6 +42,11 @@
 					"name": "songs",
 					"pathName": "pages/songs/songs",
 					"query": "id=10005"
+				},
+				{
+					"id": -1,
+					"name": "home",
+					"pathName": "pages/home/home"
 				}
 			]
 		}

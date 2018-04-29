@@ -11,7 +11,8 @@ Page({
   data: {
     banner: [],
     hotSongs: [],
-    title: "hello"
+    title: "hello",
+    starN:3
   },
 
   getIndexData: function () {
@@ -45,8 +46,8 @@ Page({
   /* auxiliary method for onLikeSong */
   switchImgAndText: function (imgIndex, isCollected) {
     var that = this;
-    var likeImg = "../../images/icons/icon_collect_checked.png";
-    var notlikeImg = "../../images/icons/icon_collect.png";
+    var likeImg = "../../images/icons/attentionT.png";
+    var notlikeImg = "../../images/icons/attention.png";
 
     /* the dynamic way to set data is to use an array */
     var targetImgSrc = "array[" + imgIndex + "]" + ".imgSrc";
