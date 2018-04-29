@@ -12,6 +12,11 @@
   height: 417rpx;
 }
 
+.hard-index{
+  font-size: 25rpx;
+  display: flex;
+  flex-direction: row;
+}
 /* Below is for hot songs */
 
 .a-section {
@@ -34,9 +39,9 @@
 }
 
 .a-section .h .txt {
-  color:white;
+  color: white;
   padding-right: 30rpx;
-  /*background: url("http://ac-3yr0g9cz.clouddn.com/2cdba05369e10f934e54.png") right 4rpx no-repeat;*/
+  /* background: url("http://ac-3yr0g9cz.clouddn.com/2cdba05369e10f934e54.png") right 4rpx no-repeat;  */
   background-size: 16.656rpx 27rpx;
   display: inline-block;
   height: 36rpx;
@@ -53,25 +58,65 @@
 .a-popular .b .item {
   border-top: 1px solid #d9d9d9;
   margin: 0 20rpx;
-  height: 150rpx;
+  height: 190rpx;
   width: 710rpx;
+  display:flex;
+  flex-direction: column
 }
 
+.hard-imge{
+  width: 30rpx;
+  height: 30rpx;
+  display: flex;
+  margin-left: 20rpx;
+}
+.nav-container{
+  position: relative;
+  height: 190rpx;
+}
+.music-container{
+  width:100%;
+  display:block;
+  flex-direction: row;
+}
+.hard-container{
+  position: relative;
+  width:100%;
+  display:flex;
+}
+
+.music-item{
+  display: flex;
+  flex-direction: row;
+}
+
+.hotsong-container{
+  display:flex;
+  flex-direction: row nowrap;
+}
 .a-popular .b .item .hotsong-container {
-  padding: 0 15rpx 0 15rpx; 
-  margin-top: 25rpx;
-  float:left; 
+  padding: 0 15rpx 0 15rpx;
+  margin-top: 20rpx;
+  direction: flex;
+  flex-direction: row;
 }
 
 .a-popular .b .item .hotsong-img {
-  width:50rpx; 
-  height:50rpx; 
-  display:block;
+  width: 45rpx;
+  height: 45rpx;
+  display: block;
+  padding-left:20rpx;
+}
+
+.a-popular .b .item .hotsong-txt-box {
+  width: 120rpx;
+  text-align: left;
 }
 
 .a-popular .b .item .hotsong-txt {
   font-size: 30rpx;
-  line-height: 50rpx; 
+  line-height: 50rpx;
+  margin-left: 30rpx;
 }
 
 .a-popular .b .img {
@@ -79,7 +124,7 @@
   margin-right: 12rpx;
   float: left;
   width: 120rpx;
-  height: 120rpx;
+  height: 130rpx;
   /* width: 240rpx;
   height: 240rpx; */
 }
@@ -87,7 +132,7 @@
 .a-popular .b .right {
   float: left;
   height: 150rpx;
-  width: 400rpx;
+  width: 300rpx;
   /* width: 456rpx; */
   display: flex;
   flex-flow: row nowrap;
@@ -100,12 +145,16 @@
   justify-content: center;
   overflow: hidden;
   height: 150rpx;
-  width: 400rpx;
+  width: 380rpx;
   /* width: 456rpx; */
 }
-
+.right-part{
+  padding: 0 15rpx 0 15rpx;
+  display: flex;
+  flex-direction: column;
+}
 .a-popular .b .name {
-  width: 400rpx;
+  width: 380rpx;
   /* width: 456rpx; */
   display: block;
   color: #333;
@@ -114,7 +163,7 @@
 }
 
 .a-popular .b .desc {
-  width: 400rpx;
+  width: 380rpx;
   /* width: 456rpx; */
   display: block;
   color: #999;
@@ -123,7 +172,7 @@
 }
 
 .a-popular .b .singer {
-  width: 400rpx;
+  width: 380rpx;
   /* width: 456rpx; */
   display: block;
   color: #b4282d;

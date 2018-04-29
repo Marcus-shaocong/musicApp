@@ -10,13 +10,16 @@
   <view class="h">
     <view>
       <!-- navigator url="" -->
-        <text class="txt">人气推荐</text>
+      <text class="txt">人气推荐</text>
       <!-- /navigator -->
     </view>
   </view>
+
   <view class="b">
     <view class="item" wx:for="{{hotSongs}}" wx:for-index="index" wx:for-item="item" wx:key="id">
-      <view>
+    <navigator class="nav-container" url="/pages/playbg/playbg?id={{item.id}}">
+    <view class='music-item'>
+    <view class='music-container'>
         <image class="img" src="{{item.listPicUrl}}" background-size="cover"></image>
         <view class="right">
           <view class="text">
@@ -24,19 +27,34 @@
             <text class="singer">{{item.singer}}</text>
           </view>
         </view>
-        <navigator class="hotsong-container" url="/pages/playbg/playbg?id={{item.id}}">
+        <view class='right-part'>
+        <view class="hotsong-container">
           <image class="play-img hotsong-img" src="../../images/icons/address_right.png"></image>
           <view>
             <text class="hotsong-txt">学习</text>
           </view>
-        </navigator>
-        <view class="hotsong-container" bindtap="onLikeSong">
-          <image id="{{item.id}}" class="like-img hotsong-img" src="../../images/icons/icon_collect.png"></image>
-          <view>
-            <text class="hotsong-txt">收藏</text>
+        </view>
+
+        <view class="hotsong-container" catchtap="onLikeSong" data-img-index="{{index}}" data-is-collected="{{array[index].isCollected}}">
+          <image id="{{item.id}}" class="like-img hotsong-img" src="{{array[index].imgSrc}}"></image>
+          <view class="hotsong-txt-box">
+            <text class="hotsong-txt">{{array[index].likeText}}</text>
           </view>
         </view>
-      </view>
+        </view>
+        </view>
+        </view> <!-- end of class 'music-item' -->
+        <view class='music-item'>
+          <text class="hard-index">难度指数：</text>
+          <block wx:for="{{starN}}" wx:key="index">
+            <image id="{{item.id}}" class="hard-imge" src="/images/icons/star1.png"></image>
+          </block>
+          <block wx:for="5-{{starN.length}}" wx:key="index">
+            <image id="{{item.id}}" class="hard-imge" src="/images/icons/star.png"></image>
+          </block>
+        </view>
+    </navigator>
+
     </view>
   </view>
 </view>
