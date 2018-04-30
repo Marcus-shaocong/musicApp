@@ -113,8 +113,11 @@ Page({
       image3: song[0].gallery[1].image,
       scores:song[0].gallery,
       musicPrefixTime:4,
-      imageData: song[0].gallery
+      imageData: song[0].gallery,
     });
+    that.page.setData({
+      "isScroll":false
+    })
     that.swiper();
   },
 
@@ -251,6 +254,7 @@ Page({
 
   onTouchEnd: function (options) {
     let that = this;
+    console.log("onTouchEnd", options)
     wx.playBackgroundAudio({
       dataUrl: that.data.playUrl
     });

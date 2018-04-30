@@ -72,28 +72,41 @@
 .image-list{
 display: flex;
 flex-direction: column;
+overflow: visible;
 }
 
 .swiper-container{
   display: flex;
   flex-direction: column;
-  height: 500rpx;
+  height: 800rpx;
   width:100%;
 }
-
+.swider-item{
+  position: relative;
+  height: 800rpx;
+  width:100%;
+}
 .place-holder{
-position: absolute;
+position: relative;
 justify-content: center;
-height: 200rpx;
+height: 100rpx;
 width:100%;
 }
 
+.img-con{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: visible;
+  height:800rpx;
+  width:100%;
+}
 .swider-img1{
 position: relative;
 justify-content: center;
-height: 300rpx;
+height: 800rpx;
 width:100%;
-opacity: 0.1;
+opacity: 0.8;
 overflow: visible;
 }
 

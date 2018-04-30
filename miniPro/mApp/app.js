@@ -36,7 +36,7 @@ App({
   globalData: {
     userInfo: null,
     useLocal: false,
-    domainName:"https://xinjushi.xyz"
-    //domainName: "http://localhost:3000"
+    //domainName:"https://xinjushi.xyz"
+    domainName: "http://localhost:3000"
   }
 })

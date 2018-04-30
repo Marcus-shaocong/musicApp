@@ -22,9 +22,11 @@ module.exports={
             { time: 28.384, image: `${Appconfig.serverDomain}/assets/images/7.jpg` },
             { time: 31.557, image: `${Appconfig.serverDomain}/assets/images/8.jpg` },
             { time: 35.181, image: `${Appconfig.serverDomain}/assets/images/9.jpg` },
+            { time: 35.181, image: `${Appconfig.serverDomain}/assets/images/wenrou_full.jpg` },
           ], // 系列相关图片
           listPicUrl:`${Appconfig.serverDomain}/assets/images/10011.jpg`,
-          src:`${Appconfig.serverDomain}/assets/mp3/wenyou.mp3`
+          src:`${Appconfig.serverDomain}/assets/mp3/wenyou.mp3`,
+          hardLevel:4
         },
         {
           id: 10021,
@@ -41,9 +43,11 @@ module.exports={
             { time: 28.384, image: `${Appconfig.serverDomain}/assets/images/7.jpg` },
             { time: 31.557, image: `${Appconfig.serverDomain}/assets/images/8.jpg` },
             { time: 35.181, image: `${Appconfig.serverDomain}/assets/images/9.jpg` },
+            { time: 35.181, image: `${Appconfig.serverDomain}/assets/images/wenrou_full.jpg` },
           ], // 系列相关图片
           listPicUrl: `${Appconfig.serverDomain}/assets/images/10021.jpg`,
-          src:`${Appconfig.serverDomain}/assets/mp3/wenyou.mp3`
+          src:`${Appconfig.serverDomain}/assets/mp3/wenyou.mp3`,
+          hardLevel:3
         },
         {
           id: 10031,
@@ -60,9 +64,11 @@ module.exports={
             { time: 28.384, image: `${Appconfig.serverDomain}/assets/images/7.jpg` },
             { time: 31.557, image: `${Appconfig.serverDomain}/assets/images/8.jpg` },
             { time: 35.181, image: `${Appconfig.serverDomain}/assets/images/9.jpg` },
+            { time: 35.181, image: `${Appconfig.serverDomain}/assets/images/wenrou_full.jpg` },
           ], // 系列相关图片
           listPicUrl: `${Appconfig.serverDomain}/assets/images/10031.jpg`,
-          src:`${Appconfig.serverDomain}/assets/mp3/wenyou.mp3`
+          src:`${Appconfig.serverDomain}/assets/mp3/wenyou.mp3`,
+          hardLevel:3
         },
         {
           id: 10041,
@@ -70,18 +76,16 @@ module.exports={
           singer: "五月天",
           categoryId: 10040,
           gallery: [
-            { time: 10.502, image: `${Appconfig.serverDomain}/assets/images/1.jpg` },
-            { time: 11.101, image: `${Appconfig.serverDomain}/assets/images/2.jpg` },
-            { time: 16.262, image: `${Appconfig.serverDomain}/assets/images/3.jpg` },
-            { time: 19.563, image: `${Appconfig.serverDomain}/assets/images/4.jpg` },
-            { time: 22.968, image: `${Appconfig.serverDomain}/assets/images/5.jpg` },
-            { time: 25.883, image: `${Appconfig.serverDomain}/assets/images/6.jpg` },
-            { time: 28.384, image: `${Appconfig.serverDomain}/assets/images/7.jpg` },
-            { time: 31.557, image: `${Appconfig.serverDomain}/assets/images/8.jpg` },
-            { time: 35.181, image: `${Appconfig.serverDomain}/assets/images/9.jpg` },
+            { time: 10.502, image: `${Appconfig.serverDomain}/assets/images/wenrou_1.png` },
+            { time: 11.101, image: `${Appconfig.serverDomain}/assets/images/wenrou_2.png` },
+            { time: 16.262, image: `${Appconfig.serverDomain}/assets/images/wenrou_3.png` },
+            { time: 19.563, image: `${Appconfig.serverDomain}/assets/images/wenrou_4.png` },
+            { time: 22.968, image: `${Appconfig.serverDomain}/assets/images/wenrou_5.png` },
+            { time: 22.968, image: `${Appconfig.serverDomain}/assets/images/wenrou_6.png` },
           ], // 系列相关图片
           listPicUrl: `${Appconfig.serverDomain}/assets/images/10041.jpeg`,
-          src:`${Appconfig.serverDomain}/assets/mp3/wenyou.mp3`
+          src:`${Appconfig.serverDomain}/assets/mp3/wenyou.mp3`,
+          hardLevel:2
         } 
       ],
       title: "MusicApp"

@@ -12,7 +12,6 @@ Page({
     banner: [],
     hotSongs: [],
     title: "hello",
-    starN:3
   },
 
   getIndexData: function () {

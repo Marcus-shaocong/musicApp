@@ -1,6 +1,6 @@
 
 <!-- <view id="bg-before" style="background:url({{bgUrl}}) 0/cover fixed"></view> -->
-
+<scroll-view style="height:100%">
 <view id="main" style="background:url({{bgUrl}}) 0/cover fixed">
 <view class=".albumContainer">
  <view id="albumCover">
@@ -53,7 +53,6 @@
       </swiper>
 
  </view>
--->
 <view class='place-holder'>
 </view>
   <scroll-view class=".image-list">
@@ -62,7 +61,26 @@
   <image class="swider-img3" src="{{image3}}" mode="widthFix" animation="{{animationData1}}"></image>
   </scroll-view>
 </view>
+
+-->
+
+<view class='place-holder'>
 </view>
+       <swiper
+       interval="{{swiperItr}}" 
+       indicator-dots="{{false}}" 
+       duration="{{musicDuration}}" 
+       vertical="true" 
+       autoplay="{{false}}" 
+       class='swiper-container' circular="true" 
+       bindchange="bingchange" previous-margin='170rpx'
+       >
+      <swiper-item wx:for="{{scores}}" wx:key="index">
+        <image class=".swider-img1" src="{{item.image}}" mode="widthFix" ></image>
+      </swiper-item>
+      </swiper>
+</view>
+ </view>
 
 <view class='player'>
   <slider color='#333' block-size='20' block-color='#333' bindchange="onChange" bindtouchstart="onTouchStart" bindtouchend="onTouchEnd" 
@@ -76,6 +94,10 @@
     </view>
   </view>
 </view>
+
+
+</scroll-view>
+
 
 
 
