@@ -111,6 +111,7 @@
 .a-popular .b .item .hotsong-txt-box {
   width: 120rpx;
   text-align: left;
+  margin-top: -5rpx;
 }
 
 .a-popular .b .item .hotsong-txt {

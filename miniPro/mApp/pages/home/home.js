@@ -27,7 +27,8 @@ Page({
         that.setData({
           banner: res.data.banner,
           hotSongs: res.data.hotSongs,
-          title: res.data.title
+          title: res.data.title,
+          array: localData.array
         });
         wx.setStorageSync("data", res.data);
         wx.hideLoading() 
