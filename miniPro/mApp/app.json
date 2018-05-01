@@ -6,7 +6,8 @@
     "pages/auth/login/login",
     "pages/songs/songs",
     "pages/player/player",
-    "pages/playbg/playbg"
+    "pages/playbg/playbg",
+    "pages/search/search"
   ],
   "window": {
     "backgroundTextStyle": "dark",

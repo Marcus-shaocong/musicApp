@@ -1,3 +1,12 @@
+<view class='search-container'>
+  <view class='search'>
+  <navigator class='input' url='../search/search'>
+  <image class='icon' src='/images/icons/search.png'></image>
+  <text class='txt'>搜索音乐</text>
+  </navigator>
+  </view>
+</view>
+
 <swiper class="banner" indicator-dots="true" autoplay="true" interval="3000" duration="1000">
   <swiper-item wx:for="{{banner}}" wx:key="id">
     <!-- <navigator url="{{item.link}}"> -->
