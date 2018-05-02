@@ -20,7 +20,7 @@
 
 .search .input {
   width: 690rpx;
-  height: 56rpx;
+  height: 70rpx;
   background: #ededed;
   border-radius: 8rpx;
   display: flex;
@@ -29,8 +29,8 @@
 }
 
 .search .icon {
-  width: 28rpx;
-  height: 28rpx;
+  width: 32rpx;
+  height: 32rpx;
 }
 
 .search .txt {

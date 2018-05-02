@@ -19,30 +19,6 @@ Page({
     result: ''
   },
 
-  getHotSongs: function () {
-    let that = this;
-    wx.request({
-      url: api.IndexUrl,
-      method: 'POST',
-      header: {
-        'content-type': 'application/json'
-      },
-      success: function (res) {
-        console.log("res", res)
-        that.setData({
-          hotSongs: res.data.hotSongs,
-        });
-        wx.setStorageSync("data", res.data);
-        wx.hideLoading()
-      },
-      fail: function (err) {
-        wx.hideLoading()
-        util.showErrorToast("加载失败...")
-        console.log("err", err);
-      }
-    })
-  },
-
   inputChange: function (e) {
 
     this.setData({
@@ -111,21 +87,6 @@ Page({
       that.setData({
         hotSongs: data.hotSongs
       })
-    }
-    else {
-      let fromLocal = app.globalData.useLocal;
-      console.log("localData", localData);
-      if (fromLocal) {
-        that.setData({
-          hotSongs: localData.hotSongs
-        })
-      }
-      else {
-        wx.showLoading({
-          title: '正在加载.....',
-        })
-        that.getHotSongs();
-      }
     }
   },
 

@@ -13,7 +13,6 @@ page{
     position: fixed;
     top: 0;
     width: 100%;
-    /* width: 750rpx;  */
     height: 91rpx;
     display: flex;
     background: #fff;
@@ -30,6 +29,7 @@ page{
     width: 0;
     flex: 1;
     height: 59rpx;
+    border-radius: 8rpx;
     line-height: 59rpx;
     padding: 0 20rpx;
     background: #f4f4f4;
