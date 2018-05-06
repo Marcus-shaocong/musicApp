@@ -68,7 +68,7 @@
 </view>
        <swiper
        interval="{{swiperItr}}" 
-       indicator-dots="{{false}}" 
+       indicator-dots="{{true}}" 
        duration="{{musicDuration}}" 
        vertical="true" 
        autoplay="{{false}}" 
