@@ -1,4 +1,4 @@
-const Appconfig = require("../lib/AppConfig")
+const Appconfig = require('../lib/AppConfig').get(process.env.NODE_ENV);
 module.exports={
 
   banner: [
@@ -13,22 +13,24 @@ module.exports={
           singer: "陈奕迅",
           categoryId: 10010,
           gallery: [
-            { time: 10.502, image: `${Appconfig.serverDomain}/assets/images/wenrou_v3_1.png` },
-            { time: 11.101, image: `${Appconfig.serverDomain}/assets/images/wenrou_v3_2.png` },
-            { time: 16.262, image: `${Appconfig.serverDomain}/assets/images/wenrou_v3_3.png` },
-            { time: 19.563, image: `${Appconfig.serverDomain}/assets/images/wenrou_v3_4.png` },
-            { time: 22.968, image: `${Appconfig.serverDomain}/assets/images/wenrou_v3_5.png` },
-            { time: 22.968, image: `${Appconfig.serverDomain}/assets/images/wenrou_v3_6.png` },
-            { time: 10.502, image: `${Appconfig.serverDomain}/assets/images/wenrou_v3_7.png` },
-            { time: 11.101, image: `${Appconfig.serverDomain}/assets/images/wenrou_v3_8.png` },
-            { time: 16.262, image: `${Appconfig.serverDomain}/assets/images/wenrou_v3_9.png` },
-            { time: 19.563, image: `${Appconfig.serverDomain}/assets/images/wenrou_v3_10.png` },
-            { time: 22.968, image: `${Appconfig.serverDomain}/assets/images/wenrou_v3_11.png` },
-            { time: 22.968, image: `${Appconfig.serverDomain}/assets/images/wenrou_v3_12.png` }
+            { time: 16.262, image: `${Appconfig.serverDomain}/assets/images/wenrou_v5_1.png` },
+            { time: 19.563, image: `${Appconfig.serverDomain}/assets/images/wenrou_v5_2.png` },
+            { time: 22.968, image: `${Appconfig.serverDomain}/assets/images/wenrou_v5_3.png` },
+            { time: 22.968, image: `${Appconfig.serverDomain}/assets/images/wenrou_v5_4.png` },
+            { time: 10.502, image: `${Appconfig.serverDomain}/assets/images/wenrou_v5_6.png` },
+            { time: 11.101, image: `${Appconfig.serverDomain}/assets/images/wenrou_v5_7.png` },
+            { time: 16.262, image: `${Appconfig.serverDomain}/assets/images/wenrou_v5_8.png` },
+            { time: 19.563, image: `${Appconfig.serverDomain}/assets/images/wenrou_v5_9.png` },
+            { time: 22.968, image: `${Appconfig.serverDomain}/assets/images/wenrou_v5_10.png`}
           ], // 系列相关图片
           listPicUrl:`${Appconfig.serverDomain}/assets/images/10011.jpg`,
           src:`${Appconfig.serverDomain}/assets/mp3/wenyou.mp3`,
-          hardLevel:4
+          hardLevel:4,
+          saveOption:{
+            imgSrc: "../../images/icons/attention.png",
+            likeText: "收藏",
+            isCollected: false
+          }
         },
         {
           id: 10021,
@@ -36,22 +38,25 @@ module.exports={
           singer: "邓紫棋",
           categoryId: 10020,
           gallery: [
-            { time: 10.502, image: `${Appconfig.serverDomain}/assets/images/wenrou_v3_1.png` },
-            { time: 11.101, image: `${Appconfig.serverDomain}/assets/images/wenrou_v3_2.png` },
-            { time: 16.262, image: `${Appconfig.serverDomain}/assets/images/wenrou_v3_3.png` },
-            { time: 19.563, image: `${Appconfig.serverDomain}/assets/images/wenrou_v3_4.png` },
-            { time: 22.968, image: `${Appconfig.serverDomain}/assets/images/wenrou_v3_5.png` },
-            { time: 22.968, image: `${Appconfig.serverDomain}/assets/images/wenrou_v3_6.png` },
-            { time: 10.502, image: `${Appconfig.serverDomain}/assets/images/wenrou_v3_7.png` },
-            { time: 11.101, image: `${Appconfig.serverDomain}/assets/images/wenrou_v3_8.png` },
-            { time: 16.262, image: `${Appconfig.serverDomain}/assets/images/wenrou_v3_9.png` },
-            { time: 19.563, image: `${Appconfig.serverDomain}/assets/images/wenrou_v3_10.png` },
-            { time: 22.968, image: `${Appconfig.serverDomain}/assets/images/wenrou_v3_11.png` },
-            { time: 22.968, image: `${Appconfig.serverDomain}/assets/images/wenrou_v3_12.png` }
+            { time: 16.262, image: `${Appconfig.serverDomain}/assets/images/wenrou_v6_1.png` },
+            { time: 19.563, image: `${Appconfig.serverDomain}/assets/images/wenrou_v6_2.png` },
+            { time: 22.968, image: `${Appconfig.serverDomain}/assets/images/wenrou_v6_3.png` },
+            { time: 22.968, image: `${Appconfig.serverDomain}/assets/images/wenrou_v6_4.png` },
+            { time: 10.502, image: `${Appconfig.serverDomain}/assets/images/wenrou_v6_5.png` },
+            { time: 11.101, image: `${Appconfig.serverDomain}/assets/images/wenrou_v6_6.png` },
+            { time: 16.262, image: `${Appconfig.serverDomain}/assets/images/wenrou_v6_7.png` },
+            { time: 19.563, image: `${Appconfig.serverDomain}/assets/images/wenrou_v6_8.png` },
+            { time: 22.968, image: `${Appconfig.serverDomain}/assets/images/wenrou_v6_9.png`}
           ], // 系列相关图片
           listPicUrl: `${Appconfig.serverDomain}/assets/images/10021.jpg`,
           src:`${Appconfig.serverDomain}/assets/mp3/wenyou.mp3`,
-          hardLevel:3
+          hardLevel:3,
+          saveOption:{
+            imgSrc: "../../images/icons/attention.png",
+            likeText: "收藏",
+            isCollected: false
+          }
+
         },
         {
           id: 10031,
@@ -59,22 +64,24 @@ module.exports={
           singer: "王力宏",
           categoryId: 10030,
           gallery: [
-            { time: 10.502, image: `${Appconfig.serverDomain}/assets/images/wenrou_v3_1.png` },
-            { time: 11.101, image: `${Appconfig.serverDomain}/assets/images/wenrou_v3_2.png` },
-            { time: 16.262, image: `${Appconfig.serverDomain}/assets/images/wenrou_v3_3.png` },
-            { time: 19.563, image: `${Appconfig.serverDomain}/assets/images/wenrou_v3_4.png` },
-            { time: 22.968, image: `${Appconfig.serverDomain}/assets/images/wenrou_v3_5.png` },
-            { time: 22.968, image: `${Appconfig.serverDomain}/assets/images/wenrou_v3_6.png` },
-            { time: 10.502, image: `${Appconfig.serverDomain}/assets/images/wenrou_v3_7.png` },
-            { time: 11.101, image: `${Appconfig.serverDomain}/assets/images/wenrou_v3_8.png` },
-            { time: 16.262, image: `${Appconfig.serverDomain}/assets/images/wenrou_v3_9.png` },
-            { time: 19.563, image: `${Appconfig.serverDomain}/assets/images/wenrou_v3_10.png` },
-            { time: 22.968, image: `${Appconfig.serverDomain}/assets/images/wenrou_v3_11.png` },
-            { time: 22.968, image: `${Appconfig.serverDomain}/assets/images/wenrou_v3_12.png` }
+            { time: 16.262, image: `${Appconfig.serverDomain}/assets/images/wenrou_v6_1.png` },
+            { time: 19.563, image: `${Appconfig.serverDomain}/assets/images/wenrou_v6_2.png` },
+            { time: 22.968, image: `${Appconfig.serverDomain}/assets/images/wenrou_v6_3.png` },
+            { time: 22.968, image: `${Appconfig.serverDomain}/assets/images/wenrou_v6_4.png` },
+            { time: 10.502, image: `${Appconfig.serverDomain}/assets/images/wenrou_v6_5.png` },
+            { time: 11.101, image: `${Appconfig.serverDomain}/assets/images/wenrou_v6_6.png` },
+            { time: 16.262, image: `${Appconfig.serverDomain}/assets/images/wenrou_v6_7.png` },
+            { time: 19.563, image: `${Appconfig.serverDomain}/assets/images/wenrou_v6_8.png` },
+            { time: 22.968, image: `${Appconfig.serverDomain}/assets/images/wenrou_v6_9.png`}
           ], // 系列相关图片
           listPicUrl: `${Appconfig.serverDomain}/assets/images/10031.jpg`,
           src:`${Appconfig.serverDomain}/assets/mp3/wenyou.mp3`,
-          hardLevel:3
+          hardLevel:3,
+          saveOption:{
+            imgSrc: "../../images/icons/attention.png",
+            likeText: "收藏",
+            isCollected: false
+          }
         },
         {
           id: 10041,
@@ -82,22 +89,24 @@ module.exports={
           singer: "五月天",
           categoryId: 10040,
           gallery: [
-            { time: 10.502, image: `${Appconfig.serverDomain}/assets/images/wenrou_v3_1.png` },
-            { time: 11.101, image: `${Appconfig.serverDomain}/assets/images/wenrou_v3_2.png` },
-            { time: 16.262, image: `${Appconfig.serverDomain}/assets/images/wenrou_v3_3.png` },
-            { time: 19.563, image: `${Appconfig.serverDomain}/assets/images/wenrou_v3_4.png` },
-            { time: 22.968, image: `${Appconfig.serverDomain}/assets/images/wenrou_v3_5.png` },
-            { time: 22.968, image: `${Appconfig.serverDomain}/assets/images/wenrou_v3_6.png` },
-            { time: 10.502, image: `${Appconfig.serverDomain}/assets/images/wenrou_v3_7.png` },
-            { time: 11.101, image: `${Appconfig.serverDomain}/assets/images/wenrou_v3_8.png` },
-            { time: 16.262, image: `${Appconfig.serverDomain}/assets/images/wenrou_v3_9.png` },
-            { time: 19.563, image: `${Appconfig.serverDomain}/assets/images/wenrou_v3_10.png` },
-            { time: 22.968, image: `${Appconfig.serverDomain}/assets/images/wenrou_v3_11.png` },
-            { time: 22.968, image: `${Appconfig.serverDomain}/assets/images/wenrou_v3_12.png` }
+            { time: 16.262, image: `${Appconfig.serverDomain}/assets/images/wenrou_v5_1.png` },
+            { time: 19.563, image: `${Appconfig.serverDomain}/assets/images/wenrou_v5_2.png` },
+            { time: 22.968, image: `${Appconfig.serverDomain}/assets/images/wenrou_v5_3.png` },
+            { time: 22.968, image: `${Appconfig.serverDomain}/assets/images/wenrou_v5_4.png` },
+            { time: 10.502, image: `${Appconfig.serverDomain}/assets/images/wenrou_v5_5.png` },
+            { time: 11.101, image: `${Appconfig.serverDomain}/assets/images/wenrou_v5_6.png` },
+            { time: 16.262, image: `${Appconfig.serverDomain}/assets/images/wenrou_v5_7.png` },
+            { time: 19.563, image: `${Appconfig.serverDomain}/assets/images/wenrou_v5_8.png` },
+            { time: 22.968, image: `${Appconfig.serverDomain}/assets/images/wenrou_v5_9.png`}
           ], // 系列相关图片
           listPicUrl: `${Appconfig.serverDomain}/assets/images/10041.jpeg`,
           src:`${Appconfig.serverDomain}/assets/mp3/wenyou.mp3`,
-          hardLevel:2
+          hardLevel:2,
+          saveOption:{
+            imgSrc: "../../images/icons/attention.png",
+            likeText: "收藏",
+            isCollected: false
+          }
         },
         {
           id: 10051,
@@ -114,7 +123,12 @@ module.exports={
           ], // 系列相关图片
           listPicUrl: `${Appconfig.serverDomain}/assets/images/over_and_over.jpg`,
           src:`${Appconfig.serverDomain}/assets/mp3/over_and_over.mp3`,
-          hardLevel:2
+          hardLevel:2,
+          saveOption:{
+            imgSrc: "../../images/icons/attention.png",
+            likeText: "收藏",
+            isCollected: false
+          }
         },
         {
           id: 10052,
@@ -131,7 +145,12 @@ module.exports={
           ], // 系列相关图片
           listPicUrl: `${Appconfig.serverDomain}/assets/images/carry_on.jpg`,
           src:`${Appconfig.serverDomain}/assets/mp3/carry_on.mp3`,
-          hardLevel:2
+          hardLevel:2,
+          saveOption:{
+            imgSrc: "../../images/icons/attention.png",
+            likeText: "收藏",
+            isCollected: false
+          }
         },
         {
           id: 10061,
@@ -148,7 +167,12 @@ module.exports={
           ], // 系列相关图片
           listPicUrl: `${Appconfig.serverDomain}/assets/images/I_wanna_hold_your_hand.jpg`,
           src:`${Appconfig.serverDomain}/assets/mp3/I_wanna_hold_your_hand.mp3`,
-          hardLevel:2
+          hardLevel:2,
+          saveOption:{
+            imgSrc: "../../images/icons/attention.png",
+            likeText: "收藏",
+            isCollected: false
+          }
         },
         {
           id: 10071,
@@ -165,7 +189,12 @@ module.exports={
           ], // 系列相关图片
           listPicUrl: `${Appconfig.serverDomain}/assets/images/call_me_maybe.jpg`,
           src:`${Appconfig.serverDomain}/assets/mp3/call_me_maybe.mp3`,
-          hardLevel:2
+          hardLevel:2,
+          saveOption:{
+            imgSrc: "../../images/icons/attention.png",
+            likeText: "收藏",
+            isCollected: false
+          }
         } ,
         {
           id: 10081,
@@ -182,7 +211,12 @@ module.exports={
           ], // 系列相关图片
           listPicUrl: `${Appconfig.serverDomain}/assets/images/it_is_heartache.jpg`,
           src:`${Appconfig.serverDomain}/assets/mp3/It_is_hearache.mp3`,
-          hardLevel:2
+          hardLevel:2,
+          saveOption:{
+            imgSrc: "../../images/icons/attention.png",
+            likeText: "收藏",
+            isCollected: false
+          }
         },
         {
           id: 10091,
@@ -199,7 +233,12 @@ module.exports={
           ], // 系列相关图片
           listPicUrl: `${Appconfig.serverDomain}/assets/images/marry_you.jpg`,
           src:`${Appconfig.serverDomain}/assets/mp3/marry_you.mp3`,
-          hardLevel:2
+          hardLevel:2,
+          saveOption:{
+            imgSrc: "../../images/icons/attention.png",
+            likeText: "收藏",
+            isCollected: false
+          }
         },
         {
           id: 10092,
@@ -216,7 +255,12 @@ module.exports={
           ], // 系列相关图片
           listPicUrl: `${Appconfig.serverDomain}/assets/images/let_it_be.jpg`,
           src:`${Appconfig.serverDomain}/assets/mp3/let_it_be.mp3`,
-          hardLevel:2
+          hardLevel:2,
+          saveOption:{
+            imgSrc: "../../images/icons/attention.png",
+            likeText: "收藏",
+            isCollected: false
+          }
         },
         {
           id: 10093,
@@ -233,7 +277,12 @@ module.exports={
           ], // 系列相关图片
           listPicUrl: `${Appconfig.serverDomain}/assets/images/no_woman_no_cry.jpg`,
           src:`${Appconfig.serverDomain}/assets/mp3/no_woman_no_cry.mp3`,
-          hardLevel:2
+          hardLevel:2,
+          saveOption:{
+            imgSrc: "../../images/icons/attention.png",
+            likeText: "收藏",
+            isCollected: false
+          }
         },
         {
           id: 10094,
@@ -250,7 +299,12 @@ module.exports={
           ], // 系列相关图片
           listPicUrl: `${Appconfig.serverDomain}/assets/images/we_are_young.jpg`,
           src:`${Appconfig.serverDomain}/assets/mp3/we_are_young.mp3`,
-          hardLevel:4
+          hardLevel:4,
+          saveOption:{
+            imgSrc: "../../images/icons/attention.png",
+            likeText: "收藏",
+            isCollected: false
+          }
         },
         {
           id: 10095,
@@ -267,7 +321,12 @@ module.exports={
           ], // 系列相关图片
           listPicUrl: `${Appconfig.serverDomain}/assets/images/I_believe_I_can_fly.jpg`,
           src:`${Appconfig.serverDomain}/assets/mp3/I_belive_I_can_fly.mp3`,
-          hardLevel:3
+          hardLevel:3,
+          saveOption:{
+            imgSrc: "../../images/icons/attention.png",
+            likeText: "收藏",
+            isCollected: false
+          }
         } 
 
       ],

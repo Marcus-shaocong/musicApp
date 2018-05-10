@@ -5,14 +5,16 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-    "dev": "SET PORT=6835 DEBUG=*,-express* nodemon server.js"
+    "start": "cross-env NODE_ENV=production nodemon server.js",
+    "dev": "nodemon server.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "amplitude": "^3.5.0",
+    "axios": "^0.18.0",
     "body-parser": "^1.18.2",
+    "cross-env": "^5.1.4",
     "csvtojson": "^1.1.9",
     "debug": "^3.1.0",
     "debug-levels": "^0.2.0",

@@ -24,11 +24,16 @@ Page({
       },
       success: function (res) {
         console.log("res", res)
+        let saveOp = res.data.hotSongs.reduce((prev, cur)=>{
+            //console.log("prev", prev);
+             return prev.concat(cur.saveOption);
+        },[]);
+        console.log("saveOp", saveOp);  
         that.setData({
           banner: res.data.banner,
           hotSongs: res.data.hotSongs,
           title: res.data.title,
-          array: localData.array
+          array: saveOp
         });
         wx.setStorageSync("data", res.data);
         wx.hideLoading() 
