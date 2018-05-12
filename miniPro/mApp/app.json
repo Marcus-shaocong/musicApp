@@ -11,7 +11,7 @@
   "window": {
     "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "JoyingMusic",
+    "navigationBarTitleText": "我爱音乐",
     "navigationBarTextStyle": "black",
     "enablePullDownRefresh": true
   },

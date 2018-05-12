@@ -10,14 +10,4 @@
   <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
   </view>
-
-  <view class="profile-info" bindtap="goLogin">
-  <open-data type="groupName" open-gid="{{openGId}}"></open-data>
-    <image class="avatar" src="{{userInfo.avatarUrl}}"></image>
-    <view class="info">
-       <text class="name">{{userInfo.nickName}}</text> 
-    </view>
-  </view>
-
-  <button open-type="getUserInfo" bindgetuserinfo="userInfoHandler">微信登录</button>
 </view>

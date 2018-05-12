@@ -24,16 +24,11 @@ Page({
       },
       success: function (res) {
         console.log("res", res)
-        let saveOp = res.data.hotSongs.reduce((prev, cur)=>{
-            //console.log("prev", prev);
-             return prev.concat(cur.saveOption);
-        },[]);
-        console.log("saveOp", saveOp);  
         that.setData({
           banner: res.data.banner,
           hotSongs: res.data.hotSongs,
           title: res.data.title,
-          array: saveOp
+          array: localData.array
         });
         wx.setStorageSync("data", res.data);
         wx.hideLoading() 
@@ -148,17 +143,6 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    // design api 
-    // design song model
-    // design request the rest songs api
-    console.log("called from --> onReachBottom Event");
-    wx.showLoading({
-      title: '正在加载.....',
-    });
-    setTimeout(function() {
-      console.log("called from --> displaying songs..");
-      wx.hideLoading();
-    }, 2000);
 
   },
 

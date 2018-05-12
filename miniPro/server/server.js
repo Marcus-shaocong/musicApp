@@ -6,7 +6,6 @@ const serveStatic = require('serve-static')
 const path = require('path')
 
 const rootRouter = require('./routes/root')
-const userRouter = require('./routes/user')
 
 
 Error.stackTraceLimit = 75
@@ -29,7 +28,6 @@ app.get('/ping', function (req, res) {
 })
 
 app.use('/api/index', rootRouter)
-app.use('/api/user', userRouter)
 
 
 process.on('uncaughtException', function(err) {
@@ -59,7 +57,6 @@ async function startUp() {
 
   app.listen(port, function () {
     console.log('musicApp server listening on port ', port)
-    console.log("env",process.env.NODE_ENV);
   })
 
 }
