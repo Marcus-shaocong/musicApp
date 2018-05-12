@@ -88,6 +88,76 @@ module.exports = {
       imgSrc: "../../images/icons/attention.png",
       likeText: "收藏",
       isCollected: false
+    },
+    {
+      imgSrc: "../../images/icons/attention.png",
+      likeText: "收藏",
+      isCollected: false
+    },
+    {
+      imgSrc: "../../images/icons/attention.png",
+      likeText: "收藏",
+      isCollected: false
+    },
+    {
+      imgSrc: "../../images/icons/attention.png",
+      likeText: "收藏",
+      isCollected: false
+    },
+    {
+      imgSrc: "../../images/icons/attention.png",
+      likeText: "收藏",
+      isCollected: false
+    },
+    {
+      imgSrc: "../../images/icons/attention.png",
+      likeText: "收藏",
+      isCollected: false
+    },
+    {
+      imgSrc: "../../images/icons/attention.png",
+      likeText: "收藏",
+      isCollected: false
+    },
+    {
+      imgSrc: "../../images/icons/attention.png",
+      likeText: "收藏",
+      isCollected: false
+    },
+    {
+      imgSrc: "../../images/icons/attention.png",
+      likeText: "收藏",
+      isCollected: false
+    },
+    {
+      imgSrc: "../../images/icons/attention.png",
+      likeText: "收藏",
+      isCollected: false
+    },
+    {
+      imgSrc: "../../images/icons/attention.png",
+      likeText: "收藏",
+      isCollected: false
+    },
+    {
+      imgSrc: "../../images/icons/attention.png",
+      likeText: "收藏",
+      isCollected: false
+    },
+    {
+      imgSrc: "../../images/icons/attention.png",
+      likeText: "收藏",
+      isCollected: false
+    },
+    {
+      imgSrc: "../../images/icons/attention.png",
+      likeText: "收藏",
+      isCollected: false
+    },
+    {
+      imgSrc: "../../images/icons/attention.png",
+      likeText: "收藏",
+      isCollected: false
     }
   ]
 }

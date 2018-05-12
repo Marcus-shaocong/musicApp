@@ -1,6 +1,11 @@
 // 以下是业务服务器API地址
 // 本机开发时使用
-var WxApiRoot = 'https://xinjushi.xyz/api/';
+<<<<<<< HEAD
+var WxApiRoot = 'http://localcentos:3000/api/';
+=======
+const appConfig = require('./AppConfig.js');
+var WxApiRoot = appConfig.apiUrl;
+>>>>>>> c3d003b060d94a777d20c7dc0ea984bca8268d97
 //var WxApiRoot = 'http://localhost:3000/api/';
 // 局域网测试使用
 // var WxApiRoot = 'http://192.168.0.101:8082/wx/';

@@ -24,9 +24,9 @@ Page({
     animationData1:"",
     step:0,
     alreadyStart:false,
-    swiperItr:6000,
+    swiperItr:500,
     musicPrefixTime:3,
-    musicDuration: 6000,
+    musicDuration: 500,
     autop:false,
     imageData:[],
     activateIndex:1,
@@ -103,7 +103,7 @@ Page({
       console.log("options.id", options.id)
       return item.id == options.id;
     });
-    console.log("song", song[0].gallery);
+    console.log("song", song[0]);
     console.log("laddy", `${app.globalData.domainName}/assets/images/laddy.jpg`);
     //let songSrc = "https://xinjushi.xyz/assets/mp3/wenyou.mp3"
     that.setData({
@@ -115,9 +115,6 @@ Page({
       musicPrefixTime:4,
       imageData: song[0].gallery,
     });
-    that.page.setData({
-      "isScroll":false
-    })
     that.swiper();
   },
 

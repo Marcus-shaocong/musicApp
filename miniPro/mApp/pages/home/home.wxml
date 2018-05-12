@@ -44,6 +44,7 @@
         </view>
         </view>
         </view> <!-- end of class 'music-item' -->
+
         <view class='music-item'>
           <text class="hard-index">难度指数：</text>
           <block wx:for="{{item.hardLevel}}" wx:key="i">
@@ -53,6 +54,7 @@
             <image class="hard-imge" src="/images/icons/star.png"></image>
           </block>
         </view>
+        
     </navigator>
 
     </view>

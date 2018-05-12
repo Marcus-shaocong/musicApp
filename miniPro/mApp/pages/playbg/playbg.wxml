@@ -73,7 +73,7 @@
        vertical="true" 
        autoplay="{{false}}" 
        class='swiper-container' circular="true" 
-       bindchange="bingchange" previous-margin='170rpx'
+       bindchange="bingchange" next-margin='10px'
        >
       <swiper-item wx:for="{{scores}}" wx:key="index">
         <image class=".swider-img1" src="{{item.image}}" mode="widthFix" ></image>

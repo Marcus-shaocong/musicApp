@@ -6,7 +6,7 @@ router.post('/', async (req, res) => {
     setInterval(function(){
         
         if(data){
-            console.log("return", data);
+            //console.log("return", data);
             res.json(data);
         }
     },5000)

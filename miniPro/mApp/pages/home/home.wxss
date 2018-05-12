@@ -124,10 +124,8 @@
   margin-top: 12rpx;
   margin-right: 12rpx;
   float: left;
-  width: 120rpx;
+  width: 130rpx;
   height: 130rpx;
-  /* width: 240rpx;
-  height: 240rpx; */
 }
 
 .a-popular .b .right {

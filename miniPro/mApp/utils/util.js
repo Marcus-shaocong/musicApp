@@ -1,4 +1,5 @@
 var api = require('../config/api.js');
+const appConfig = require('../config/AppConfig.js')
 var app = getApp();
 
 function formatTime(date) {
@@ -86,11 +87,30 @@ function showErrorToast(msg) {
   })
 }
 
+const postData = blob => {
+  let url = `${appConfig.apiUrl}/api/cms`
+  wx.request({
+    url: url,
+    method: 'POST',
+    data: blob,
+    header: {
+      'content-type': 'application/json'
+    },
+
+    success: function (res) {
+      console.log('saved survey step', res.data)
+    }
+  })
+  // TODO
+}
+
+
 module.exports = {
   formatTime,
   request,
   redirect,
-  showErrorToast
+  showErrorToast,
+  postData
 }
 
 
