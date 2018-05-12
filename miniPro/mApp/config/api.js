@@ -1,12 +1,7 @@
 // 以下是业务服务器API地址
 // 本机开发时使用
 <<<<<<< HEAD
-<<<<<<< HEAD
 var WxApiRoot = 'http://localcentos:3000/api/';
-=======
-const appConfig = require('./AppConfig.js');
-var WxApiRoot = appConfig.apiUrl;
->>>>>>> c3d003b060d94a777d20c7dc0ea984bca8268d97
 =======
 const appConfig = require('./AppConfig.js');
 var WxApiRoot = appConfig.apiUrl;
