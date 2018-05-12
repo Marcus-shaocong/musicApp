@@ -1,0 +1,15 @@
+<!--pages/search/search.wxml-->
+<scroll-view class="container" style="height: 100%;">
+  <view class="search-header">
+    <view class="input-box">
+      <image class="icon" src="/images/icons/search.png"></image>
+      <input name="input" class="keyword" focus="true" value="{{keyword}}" confirm-type="search" bindinput="inputChange" bindfocus="inputFocus" bindconfirm="onKeywordConfirm" placeholder="{{defaultKeyword.keyword}}" />
+      <image class="del" wx:if="{{keyword}}" bindtap="clearKeyword" src="/images/icons/clear_input.png"></image>
+    </view>
+    <view class="right" bindtap="closeSearch">取消</view>
+  </view>
+  <view class="search-result-empty" wx:if="{{!result && searchStatus}}">
+    <image class="icon" src="/images/icons/not_found.png"></image>
+    <text class="text">没有找到您寻找的歌曲</text>
+  </view>
+</scroll-view>
