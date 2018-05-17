@@ -9,9 +9,12 @@ Page({
    * 页面的初始数据
    */
   data: {
+    title: "hello",
     banner: [],
     hotSongs: [],
-    title: "hello",
+    array: [], // an array storing save options
+    page: 1,
+    onPageBottom: false
   },
 
   getIndexData: function () {
@@ -19,13 +22,14 @@ Page({
     wx.request({
       url: api.IndexUrl,
       method: 'POST',
+      data: { page : that.data.page},
       header:{
         'content-type':'application/json'
       },
       success: function (res) {
         console.log("res", res)
         let saveOp = res.data.hotSongs.reduce((prev, cur)=>{
-            //console.log("prev", prev);
+            // console.log("prev", prev);
              return prev.concat(cur.saveOption);
         },[]);
         console.log("saveOp", saveOp);  
@@ -43,7 +47,7 @@ Page({
         util.showErrorToast("加载失败...")
         console.log("err", err);
       }
-    })
+    });
   },
 
   /**
@@ -103,7 +107,7 @@ Page({
     }
     else {
       wx.showLoading({
-        title: '正在加载.....',
+        title: '正在加载...',
       })
       that.getIndexData();
     }
@@ -148,7 +152,63 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
+    console.log("called from --> onReachBottom event");
+    var that = this;
+    if (!this.data.onPageBottom) {
+      this.getHotSongsIncrementally();
+    } else {
+      console.log("Bottom has been reached..");
+    }
+  },
 
+  /**
+   * 辅助方法 - 翻页请求歌曲数据
+   */
+  getHotSongsIncrementally: function () {
+    var that = this;
+    wx.showLoading({
+      title: '玩命加载中..',
+    });
+    var curPage = ++that.data.page;
+    wx.request({
+      url: api.IndexUrl + '/hotSongs',
+      method: 'POST',
+      data: { page: curPage },
+      header: {
+        'content-type': 'application/json'
+      },
+      success: function (res) {
+        console.log(res);
+        if (!res.data) {
+          console.warn("res is undefine or empty");
+          that.data.onPageBottom = true;
+          wx.hideLoading();
+          return;
+        };
+        var hotSongs_list = that.data.hotSongs;
+        var hotSongsLiked_list = that.data.array;
+        // 设置收藏项
+        let saveOp = res.data.reduce((prev, cur) => {
+          // console.log("prev", prev);
+          return prev.concat(cur.saveOption);
+        }, []);
+        // 遍历 & 填充
+        for (var i = 0; i < res.data.length; i++) {
+          hotSongs_list.push(res.data[i]);
+          hotSongsLiked_list.push(saveOp[i]);
+        }
+        // 设置数据
+        that.setData({
+          hotSongs: that.data.hotSongs,
+          array: that.data.array
+        });
+        wx.hideLoading();
+      },
+      fail: function () {
+        util.showErrorToast("歌曲加载失败...");
+        console.log("err", err);
+      }
+    });
   },
 
   /**
