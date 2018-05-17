@@ -13,7 +13,8 @@
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "JoyingMusic",
     "navigationBarTextStyle": "black",
-    "enablePullDownRefresh": true
+    "enablePullDownRefresh": true,
+    "onReachBottomDistance": 0
   },
   "tabBar": {
     "backgroundColor": "#fafafa",
