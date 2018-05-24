@@ -1,0 +1,74 @@
+[
+    {
+      "name": "H3M",
+      "singer": "陈奕迅",
+      "categoryId": 10010,
+      "gallery": [
+        { "time": 16.262, "image": "https://xinjushi.xyz/assets/images/wenrou_v5_1.png" },
+        { "time": 19.563, "image": "https://xinjushi.xyz/assets/images/wenrou_v5_2.png" },
+        { "time": 22.968, "image": "https://xinjushi.xyz/assets/images/wenrou_v5_3.png" },
+        { "time": 22.968, "image": "https://xinjushi.xyz/assets/images/wenrou_v5_4.png" },
+        { "time": 10.502, "image": "https://xinjushi.xyz/assets/images/wenrou_v5_6.png" },
+        { "time": 11.101, "image": "https://xinjushi.xyz/assets/images/wenrou_v5_7.png" },
+        { "time": 16.262, "image": "https://xinjushi.xyz/assets/images/wenrou_v5_8.png" },
+        { "time": 19.563, "image": "https://xinjushi.xyz/assets/images/wenrou_v5_9.png" },
+        { "time": 22.968, "image": "https://xinjushi.xyz/assets/images/wenrou_v5_10.png"}
+      ], 
+      "listPicUrl":"https://xinjushi.xyz/assets/images/10011.jpg",
+      "src":"https://xinjushi.xyz/assets/mp3/wenyou.mp3",
+      "hardLevel":4,
+      "saveOption":{
+        "imgSrc": "../../images/icons/attention.png",
+        "likeText": "收藏",
+        "isCollected": false
+      }
+    },
+    {
+      "name": "新的心跳",
+      "singer": "邓紫棋",
+      "categoryId": 10020,
+      "gallery": [
+        { "time": 16.262, "image": "https://xinjushi.xyz/assets/images/wenrou_v5_1.png" },
+        { "time": 19.563, "image": "https://xinjushi.xyz/assets/images/wenrou_v5_2.png" },
+        { "time": 22.968, "image": "https://xinjushi.xyz/assets/images/wenrou_v5_3.png" },
+        { "time": 22.968, "image": "https://xinjushi.xyz/assets/images/wenrou_v5_4.png" },
+        { "time": 10.502, "image": "https://xinjushi.xyz/assets/images/wenrou_v5_6.png" },
+        { "time": 11.101, "image": "https://xinjushi.xyz/assets/images/wenrou_v5_7.png" },
+        { "time": 16.262, "image": "https://xinjushi.xyz/assets/images/wenrou_v5_8.png" },
+        { "time": 19.563, "image": "https://xinjushi.xyz/assets/images/wenrou_v5_9.png" },
+        { "time": 22.968, "image": "https://xinjushi.xyz/assets/images/wenrou_v5_10.png"}
+      ], 
+      "listPicUrl": "https://xinjushi.xyz/assets/images/10021.jpg",
+      "src":"https://xinjushi.xyz/assets/mp3/wenyou.mp3",
+      "hardLevel":3,
+      "saveOption":{
+        "imgSrc": "../../images/icons/attention.png",
+        "likeText": "收藏",
+        "isCollected": false
+      }
+    },
+    {
+      "name": "心跳",
+      "singer": "王力宏",
+      "categoryId": 10030,
+      "gallery": [
+        { "time": 16.262, "image": "https://xinjushi.xyz/assets/images/wenrou_v6_1.png" },
+        { "time": 19.563, "image": "https://xinjushi.xyz/assets/images/wenrou_v6_2.png" },
+        { "time": 22.968, "image": "https://xinjushi.xyz/assets/images/wenrou_v6_3.png" },
+        { "time": 22.968, "image": "https://xinjushi.xyz/assets/images/wenrou_v6_4.png" },
+        { "time": 10.502, "image": "https://xinjushi.xyz/assets/images/wenrou_v6_5.png" },
+        { "time": 11.101, "image": "https://xinjushi.xyz/assets/images/wenrou_v6_6.png" },
+        { "time": 16.262, "image": "https://xinjushi.xyz/assets/images/wenrou_v6_7.png" },
+        { "time": 19.563, "image": "https://xinjushi.xyz/assets/images/wenrou_v6_8.png" },
+        { "time": 22.968, "image": "https://xinjushi.xyz/assets/images/wenrou_v6_9.png"}
+      ], 
+      "listPicUrl": "https://xinjushi.xyz/assets/images/10031.jpg",
+      "src":"https://xinjushi.xyz/assets/mp3/wenyou.mp3",
+      "hardLevel":3,
+      "saveOption":{
+        "imgSrc": "../../images/icons/attention.png",
+        "likeText": "收藏",
+        "isCollected": false
+      }
+    }
+  ]

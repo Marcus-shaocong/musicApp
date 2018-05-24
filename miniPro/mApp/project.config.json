@@ -29,7 +29,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 4,
 			"list": [
 				{
 					"id": 0,
@@ -53,6 +53,18 @@
 					"id": -1,
 					"name": "playbg",
 					"pathName": "pages/playbg/playbg",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "search",
+					"pathName": "pages/search/search",
+					"query": ""
+				},
+				{
+					"id": 5,
+					"name": "mine",
+					"pathName": "pages/mine/mine",
 					"query": ""
 				}
 			]

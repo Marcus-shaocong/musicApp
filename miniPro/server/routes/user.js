@@ -10,10 +10,10 @@ router.get('/ping', function (req, res) {
   })
   
 router.post('/', async (req, res) => {
-    console.log("user", req);
+    //console.log("user", req);
     try {
-        console.log("user", req.body.code);
-        console.log("user",Appconfig);
+        //console.log("user", req.body.code);
+        //console.log("user",Appconfig);
         let authUrl = `https://api.weixin.qq.com/sns/jscode2session?appid=${Appconfig.appId}&secret=${Appconfig.appSecret}&js_code=${req.body.code}&grant_type=authorization_code`;
         console.log("authUrl", authUrl);
     
@@ -25,7 +25,7 @@ router.post('/', async (req, res) => {
                 'content-type': 'json'
             }
           });
-          console.log("resp", resp.status, resp.data);
+          //console.log("resp", resp.status, resp.data);
           console.log("openid", resp.data.openid);
           console.log("openid", resp.data.session_key);
           let data = {

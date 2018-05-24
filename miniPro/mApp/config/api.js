@@ -19,4 +19,10 @@ var WxApiRoot = appConfig.apiUrl;
 
 module.exports = {
   IndexUrl: WxApiRoot + 'index', //首页数据接口
+
+  SearchIndex: WxApiRoot + 'search/index',  //搜索关键字
+  SearchResult: WxApiRoot + 'search/result',  //搜索结果
+  SearchHelper: WxApiRoot + 'search/helper',  //搜索帮助
+  SearchClearHistory: WxApiRoot + 'search/clearhistory',  //搜索历史
+
 };

@@ -29,6 +29,6 @@
     "mongodb": "^2.2.31",
     "nodemon": "^1.17.4",
     "serve-static": "^1.13.1",
-    "underscore": "^1.8.3"
+    "underscore": "^1.9.0"
   }
 }

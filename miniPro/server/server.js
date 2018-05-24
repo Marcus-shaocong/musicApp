@@ -7,6 +7,7 @@ const path = require('path')
 
 const rootRouter = require('./routes/root')
 const userRouter = require('./routes/user')
+const searchRouter = require('./routes/search')
 
 
 Error.stackTraceLimit = 75
@@ -30,6 +31,7 @@ app.get('/ping', function (req, res) {
 
 app.use('/api/index', rootRouter)
 app.use('/api/user', userRouter)
+app.use('/api/search', searchRouter)
 
 
 process.on('uncaughtException', function(err) {

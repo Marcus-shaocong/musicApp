@@ -5,6 +5,14 @@
     <!-- </navigator> -->
   </swiper-item>
 </swiper>
+<view class='search-container'>
+  <view class='search'>
+  <navigator class='input' url='../search/search' open-type='redirect'>
+  <image class='icon' src='/images/icons/search.png'></image>
+  <text class='txt'>音乐搜索</text>
+  </navigator>
+  </view>
+</view>
 
 <view class="a-section a-popular">
   <view class="h">
@@ -14,6 +22,8 @@
       <!-- /navigator -->
     </view>
   </view>
+
+
 
   <view class="b">
     <view class="item" wx:for="{{hotSongs}}" wx:for-index="index" wx:for-item="item" wx:key="id">
