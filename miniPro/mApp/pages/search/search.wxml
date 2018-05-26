@@ -2,10 +2,10 @@
   <view class="search-header">
     <view class="input-box">
       <image class="icon" src="/images/icons/search.png"></image>
-      <input name="input" class="keywrod" focus="true" value="{{keyword}}" confirm-type="search" bindinput="inputChange" bindfocus="inputFocus" bindconfirm="onKeywordConfirm" placeholder="{{defaultKeyword.keyword}}" />
+      <input name="input" class="keywrod" focus="true" value="{{keyword}}" confirm-type="search" bindinput="inputChange" bindfocus="inputFocus" bindconfirm="onKeywordConfirm" bindblur="inputblur" placeholder="{{defaultKeyword.keyword}}" />
       <image class="del" wx:if="{{keyword}}" bindtap="clearKeyword" src="/images/icons/delete_search.png"></image>
     </view>
-    <view class="right" bindtap="closeSearch">取消</view>
+    <view class="right {{isCancel?'no-color':'green-color'}}" bindtap="closeSearch">取消</view>
   </view>
   <view class="no-search" wx:if="{{ !searchStatus}}">
       <view class="search-keywords search-history" wx:if="{{!keyword  && historyKeyword.length}}">

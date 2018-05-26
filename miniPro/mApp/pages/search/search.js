@@ -18,7 +18,8 @@ Page({
     hotKeyword: [],
     page: 1,
     size: 20,
-    categoryId: 0
+    categoryId: 0,
+    isCancel:true
   },
   //事件处理函数
   closeSearch: function () {
@@ -48,8 +49,16 @@ Page({
     console.log("inputChange", e);
     this.setData({
       keyword: e.detail.value,
-      searchStatus: false
+      searchStatus: false,
+      isCancel: false
     });
+    let val = e.detail.value;
+    if(val.trim() ==""){
+      console.log("setCancel")
+      this.setData({
+        isCancel: true
+      });
+    }
     this.getHelpKeyword();
   },
   getHelpKeyword: function () {
@@ -72,6 +81,13 @@ Page({
     if (this.data.keyword) {
       this.getHelpKeyword();
     }
+  },
+
+  inputblur:function(){
+    console.log("inputblur");
+    this.setData({
+      isCancel:true
+    });    
   },
   clearHistory: function () {
     console.log("clearHistroy")

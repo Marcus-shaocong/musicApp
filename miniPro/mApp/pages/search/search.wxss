@@ -70,6 +70,19 @@
     height: 43rpx;
     line-height: 43rpx;
     float: right;
+
+}
+
+.no-color {
+    color:black;
+    font-weight: normal;
+    /* animation: colorback 0.5s linear; */
+}
+
+.green-color {
+    color:green;
+    font-weight:bold;
+    /* animation: colorchange 0.5s linear; */
 }
 
 .no-search{
@@ -436,3 +449,27 @@ float:left;
 margin-top:20rpx; */
 
 }
+
+@keyframes colorcancel {
+  from {
+    color:black;
+    font-size:20rpx;
+  }
+  to {
+    color:green;
+    font-size:35rpx;
+  }
+}
+
+@keyframes colorback {
+  from {
+    color:green;
+    font-size:35rpx;
+  }
+  to {
+    color:black;
+    font-size:20rpx;
+  }
+}
+
+
