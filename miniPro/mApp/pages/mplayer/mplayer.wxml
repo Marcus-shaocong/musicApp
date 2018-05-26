@@ -1,0 +1,48 @@
+
+<!-- <view id="bg-before" style="background:url({{bgUrl}}) 0/cover fixed"></view> -->
+<view class="main" style="background:url('https://xinjushi.xyz/assets/images/laddy.jpg') 0/cover fixed">
+
+<view id="header">
+
+</view>
+
+<view id="body">
+<scroll-view class="albumCover" >
+       <swiper
+       interval="{{swiperItr}}" 
+       indicator-dots="{{false}}" 
+       duration="{{musicDuration}}" 
+       vertical="true" 
+       autoplay="{{false}}" 
+       class='swiper-container' circular="true" 
+       bindchange="bingchange" next-margin='125rpx'
+       >
+      <swiper-item wx:for="{{scores}}" wx:key="index">
+        <image class=".swider-img1" src="{{item.image}}" mode="widthFix" ></image>
+      </swiper-item>
+      </swiper>
+</scroll-view>
+</view>
+
+
+<view id="footer">
+
+<view class='player'>
+  <slider color='#333' block-size='20' block-color='#333' bindchange="onChange" bindtouchstart="onTouchStart" bindtouchend="onTouchEnd" 
+  max="100" min="0" value="{{curValue}}" disabled="{{canSlider}}" class="slider-view">
+    </slider>
+  <view id="controls">
+    <text class="player-text">{{curTime}}</text>
+    <view id="controls-play" bindtap="play">
+      <image class="control" src="{{imageSrc}}" mode="aspectFill"></image>
+    </view>
+    </view>
+  </view>
+
+</view> <!-- end of footer -->
+
+</view>
+
+
+
+

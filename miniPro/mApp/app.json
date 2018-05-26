@@ -8,7 +8,8 @@
     "pages/player/player",
     "pages/playbg/playbg",
     "pages/search/search",
-    "pages/mine/mine"
+    "pages/mine/mine",
+    "pages/mplayer/mplayer"
   ],
   "window": {
     "backgroundTextStyle": "dark",

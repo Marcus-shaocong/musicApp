@@ -17,7 +17,7 @@ page{
     align-items: center;
     justify-content: flex-start;
     padding: 0 30.25rpx;
-    background: #333;
+    background: #F7F726;
 }
 
 .profile-info .avatar{
@@ -36,7 +36,7 @@ page{
     display: block;
     height: 45rpx;
     line-height: 45rpx;
-    color: #fff;
+    color: #000;
     font-size: 37.5rpx;
     margin-bottom: 10rpx;
 }

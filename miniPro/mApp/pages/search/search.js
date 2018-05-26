@@ -23,8 +23,6 @@ Page({
   //事件处理函数
   closeSearch: function () {
     this.clearKeyword();
-    wx.navigateBack()
-
   },
   clearKeyword: function () {
     this.setData({

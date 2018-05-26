@@ -7,7 +7,7 @@
 </swiper>
 <view class='search-container'>
   <view class='search'>
-  <navigator class='input' url='../search/search' open-type='redirect'>
+  <navigator class='input' url='../search/search' open-type='navigate'>
   <image class='icon' src='/images/icons/search.png'></image>
   <text class='txt'>音乐搜索</text>
   </navigator>
@@ -23,11 +23,9 @@
     </view>
   </view>
 
-
-
   <view class="b">
     <view class="item" wx:for="{{hotSongs}}" wx:for-index="index" wx:for-item="item" wx:key="id">
-    <navigator class="nav-container" url="/pages/playbg/playbg?id={{item.id}}">
+    <navigator class="nav-container" url="/pages/mplayer/mplayer?id={{item.id}}">
     <view class='music-item'>
     <view class='music-container'>
         <image class="img" src="{{item.listPicUrl}}" background-size="cover"></image>

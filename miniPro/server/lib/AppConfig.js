@@ -5,7 +5,7 @@ let AppConfig = {
         appSecret: "c1553926d21e7caf9391b2c9e314c1a1"
     },
     dev: {
-        serverDomain:"https://localhost:3000",
+        serverDomain:"http://localhost:3000",
         appId: "wxecb99e4db814c055",
         appSecret: "c1553926d21e7caf9391b2c9e314c1a1" 
     }
