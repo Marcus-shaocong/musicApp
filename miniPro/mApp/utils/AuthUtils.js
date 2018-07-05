@@ -17,7 +17,8 @@ const AuthUtils = {
             'Content-Type': 'application/json',
           },
           success: resp => {
-            console.log("login success", resp.data)
+            console.log("session key", resp.data.session_key)
+            wx.setStorageSync('session', resp.data.session_key)
             AuthUtils.checkShareInfo(loginOptions, resp.data.session_key)
           },
           fail: res => {

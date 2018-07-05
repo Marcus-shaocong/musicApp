@@ -1,14 +1,19 @@
 <view class="no-container">
   <view class="profile-info" bindtap="goLogin">
-    <image class="avatar" src="{{userInfo.avatarUrl}}"></image>
+  <view class="avatar-pic">
+    <open-data type="userAvatarUrl"></open-data>
+  </view>
+
+     <!-- <image class="avatar" src="{{userInfo.avatarUrl}}" open-data="userAvatarUrl"> 
+    </image> -->
     <view class="info">
-       <text class="name">{{userInfo.nickName}}</text> 
+      <open-data type="userNickName" class="name"></open-data>
     </view>
   </view>
 
   <view class="user-menu">
     <view class="item">
-      <view class="a" bindtap="goOrder">
+      <view class="a" bindtap="goOrder" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">
         <text class="icon order"></text>
         <text class="txt">用户管理</text>
       </view>
@@ -36,7 +41,9 @@
         <text class="icon kefu"></text>
         <text class="txt">联系我们</text>
       </view>
-    </view>   
+    </view>
+    <button wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权登录</button>
+    <button wx:if="{{canIUse}}" open-type="getPhoneNumber" bindgetuserinfo="getPhoneNumber">getPhone</button>      
     <!-- 
     <view class="item">
       <view class="a" bindtap="goCoupon">

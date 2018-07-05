@@ -2,7 +2,7 @@ const router = require('express').Router()
 const data = require("../data/index")
 const axios = require('axios');
 const Appconfig = require('../lib/AppConfig').get(process.env.NODE_ENV);
-
+const WXBizDataCrypt = require('../lib/WXBizDataCrypt')
 
 // routes
 router.get('/ping', function (req, res) {
@@ -12,8 +12,7 @@ router.get('/ping', function (req, res) {
 router.post('/', async (req, res) => {
     //console.log("user", req);
     try {
-        //console.log("user", req.body.code);
-        //console.log("user",Appconfig);
+        console.log("code",req.body.code)
         let authUrl = `https://api.weixin.qq.com/sns/jscode2session?appid=${Appconfig.appId}&secret=${Appconfig.appSecret}&js_code=${req.body.code}&grant_type=authorization_code`;
         console.log("authUrl", authUrl);
     
@@ -27,7 +26,7 @@ router.post('/', async (req, res) => {
           });
           //console.log("resp", resp.status, resp.data);
           console.log("openid", resp.data.openid);
-          console.log("openid", resp.data.session_key);
+          console.log("session_key", resp.data.session_key);
           let data = {
               openid:resp.data.openid,
               session_key: resp.data.session_key,
@@ -36,6 +35,26 @@ router.post('/', async (req, res) => {
     } catch (error) {
         console.log("catchError", error);
     }
+
+})
+
+router.post('/validate', async (req, res) => {
+  //console.log("user", req);
+  try {
+      console.log("Enter validate")
+      console.log("req.body", req.body.sess);
+      //console.log("user",Appconfig);
+      var pc = new WXBizDataCrypt(Appconfig.appId, req.body.sess)
+      let rawData = req.body.encryptedData
+      let iv = req.body.iv
+      console.log("decrypting", rawData, iv)
+      let decryptData = pc.decryptData(rawData,iv)
+      
+      console.log('\x1b[41m', decryptData);
+      res.json(decryptData);
+  } catch (error) {
+      console.log("catchError", error);
+  }
 
 })
 

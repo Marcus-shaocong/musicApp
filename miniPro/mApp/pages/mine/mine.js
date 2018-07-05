@@ -2,14 +2,18 @@ const searchD = require("../../data/searchData.js");
 const localData = require("../../data/data.js");
 const util = require("../../utils/util.js")
 const api = require('../../config/api.js');
+const AppConfig = require("../../config/AppConfig")
+
 var app = getApp()
+
 
 Page({
   data: {
     userInfo: {
       nickName: '点击登录',
       avatarUrl: 'http://yanxuan.nosdn.127.net/8945ae63d940cc42406c3f67019c5cb6.png'
-    }
+    },
+    canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
   onLoad: function (options) {
     // 页面初始化 options为页面跳转所带来的参数
@@ -97,5 +101,35 @@ Page({
       }
     })
 
-  }
+  },
+  bindGetUserInfo:function(res){
+    console.log("res",res.detail)
+    console.log("bindGetUserInfo.iv", res.detail.iv)
+    console.log("bindGetUserInfo.ed", res.detail.encryptedData)
+    let sess_key = wx.getStorageSync("session")
+    console.log("session_key", sess_key)
+    wx.request({
+      url: `${AppConfig.apiUrl}user/validate`,
+      data: { encryptedData: res.detail.encryptedData, iv: res.detail.iv, sess:sess_key },
+      method: 'POST',
+      header: {
+        'Content-Type': 'application/json',
+      },
+      success: resp => {
+        console.log("getUserInfo", resp.data)
+      },
+      fail: res => {
+        console.log("login request", res)
+      },
+      complete: res => {
+        console.log("login request", res)
+      }
+    })
+  },
+
+  getPhoneNumber: function (e) {
+    console.log(e.detail.errMsg)
+    console.log(e.detail.iv)
+    console.log(e.detail.encryptedData)
+  } 
 })

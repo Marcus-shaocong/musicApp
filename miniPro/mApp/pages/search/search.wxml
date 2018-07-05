@@ -32,7 +32,7 @@
 
   <view class="search-result" wx:if="{{ searchStatus && goodsList.length}}">
   <view class="b">
-    <navigator class="s-item" url="/pages/playbg/playbg?id={{item.id}}"  wx:for="{{goodsList}}" wx:for-index="index" wx:for-item="item" wx:key="id">
+    <navigator class="s-item" url="/pages/mplayer/mplayer?id={{item.id}}"  wx:for="{{goodsList}}" wx:for-index="index" wx:for-item="item" wx:key="id">
     <view class='s-music-item'>
     <view class='s-image-container'>
     <view class='s-img'>

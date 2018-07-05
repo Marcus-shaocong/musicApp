@@ -11,4 +11,4 @@ const config = {
   }
 }
 
-module.exports = config.production;
+module.exports = config.dev;
