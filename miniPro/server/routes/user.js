@@ -12,7 +12,7 @@ router.get('/ping', function (req, res) {
 router.post('/', async (req, res) => {
     //console.log("user", req);
     try {
-        console.log("code",req.body.code)
+        console.log("Receive code",req.body.code)
         let authUrl = `https://api.weixin.qq.com/sns/jscode2session?appid=${Appconfig.appId}&secret=${Appconfig.appSecret}&js_code=${req.body.code}&grant_type=authorization_code`;
         console.log("authUrl", authUrl);
     
@@ -41,13 +41,13 @@ router.post('/', async (req, res) => {
 router.post('/validate', async (req, res) => {
   //console.log("user", req);
   try {
-      console.log("Enter validate")
-      console.log("req.body", req.body.sess);
+      //console.log("Enter validate")
+      console.log("Receive session_key", req.body.sess);
       //console.log("user",Appconfig);
       var pc = new WXBizDataCrypt(Appconfig.appId, req.body.sess)
       let rawData = req.body.encryptedData
       let iv = req.body.iv
-      console.log("decrypting", rawData, iv)
+      console.log("Decrypting", rawData, iv)
       let decryptData = pc.decryptData(rawData,iv)
       
       console.log('\x1b[41m', decryptData);

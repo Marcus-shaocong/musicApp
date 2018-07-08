@@ -1,11 +1,13 @@
 <view class="no-container">
   <view class="profile-info" bindtap="goLogin">
+  
+  <!--
   <view class="avatar-pic">
     <open-data type="userAvatarUrl"></open-data>
   </view>
-
-     <!-- <image class="avatar" src="{{userInfo.avatarUrl}}" open-data="userAvatarUrl"> 
-    </image> -->
+-->
+    <image class="avatar" src="{{userInfo.avatarUrl}}" open-data="userAvatarUrl"> 
+    </image> 
     <view class="info">
       <open-data type="userNickName" class="name"></open-data>
     </view>
@@ -42,8 +44,7 @@
         <text class="txt">联系我们</text>
       </view>
     </view>
-    <button wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权登录</button>
-    <button wx:if="{{canIUse}}" open-type="getPhoneNumber" bindgetuserinfo="getPhoneNumber">getPhone</button>      
+     
     <!-- 
     <view class="item">
       <view class="a" bindtap="goCoupon">
@@ -87,6 +88,7 @@
     </view> -->
 
   </view>
-
-  <!--<view class="logout" bindtap="exitLogin">退出登录</view>-->
+    <button wx:if="{{canIUse}}" type="primary" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权登录</button>
+    <!--<button wx:if="{{canIUse}}" open-type="getPhoneNumber" bindgetuserinfo="getPhoneNumber">getPhone</button> 
+  <view class="logout" bindtap="exitLogin">退出登录</view>-->
 </view>
