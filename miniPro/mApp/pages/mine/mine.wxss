@@ -163,3 +163,23 @@ page{
     width: 148rpx;
     border-radius: 50%;
 }
+
+.login{
+width:680rpx;
+text-align:center;
+border-right:5%;
+border-left:5%;
+border-right:5%;
+border-bottom:5%;
+margin-top:100rpx;
+}
+
+.getPhone{
+width:680rpx;
+text-align:center;
+border-right:5%;
+border-left:5%;
+border-right:5%;
+border-bottom:5%;
+margin-top:10rpx;
+}

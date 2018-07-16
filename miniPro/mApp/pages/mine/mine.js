@@ -3,6 +3,7 @@ const localData = require("../../data/data.js");
 const util = require("../../utils/util.js")
 const api = require('../../config/api.js');
 const AppConfig = require("../../config/AppConfig")
+const AuthUtils = require('../../utils/AuthUtils');
 
 var app = getApp()
 
@@ -24,13 +25,15 @@ Page({
   onShow: function () {
 
     //获取用户的登录信息
-    if (app.globalData.hasLogin) {
+    //if (app.globalData.hasLogin) {
       let userInfo = wx.getStorageSync('userInfo');
-      this.setData({
-        userInfo: userInfo,
-      });
-    }
-
+      console.log("userInfo",userInfo)
+      if(userInfo){
+        this.setData({
+          userInfo: userInfo,
+        });
+      }
+    //}
   },
   onHide: function () {
     // 页面隐藏
@@ -40,6 +43,19 @@ Page({
     // 页面关闭
   },
   goLogin() {
+    wx.getSetting({
+      success: res => {
+        console.log("getSetting", res);
+        if (res.authSetting['scope.userInfo']) {
+          // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
+          wx.getUserInfo({
+            success: res => {
+              console.log("userInfo", res)
+            }
+          })
+        }
+      }
+    })
     if (!app.globalData.hasLogin) {
       wx.navigateTo({ url: "/pages/auth/login/login" });
     }
@@ -106,6 +122,8 @@ Page({
     console.log("res",res.detail)
     console.log("bindGetUserInfo.iv", res.detail.iv)
     console.log("bindGetUserInfo.ed", res.detail.encryptedData)
+    AuthUtils.launchLogin(res.detail)
+    /*
     let sess_key = wx.getStorageSync("session")
     console.log("session_key", sess_key)
     wx.request({
@@ -124,7 +142,7 @@ Page({
       complete: res => {
         console.log("login request", res)
       }
-    })
+    })*/
   },
 
   getPhoneNumber: function (e) {

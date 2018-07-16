@@ -88,7 +88,12 @@
     </view> -->
 
   </view>
-    <button wx:if="{{canIUse}}" type="primary" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权登录</button>
-    <!--<button wx:if="{{canIUse}}" open-type="getPhoneNumber" bindgetuserinfo="getPhoneNumber">getPhone</button> 
-  <view class="logout" bindtap="exitLogin">退出登录</view>-->
+    <button wx:if="{{canIUse}}" 
+    type="primary"
+    class="login" 
+    open-type="getUserInfo" 
+    bindgetuserinfo="bindGetUserInfo">登录
+    </button>
+    <button wx:if="{{canIUse}}" type="primary" class="getPhone"  open-type="getPhoneNumber" bindgetuserinfo="getPhoneNumber">getPhone</button> 
+ <!-- <view class="logout" bindtap="exitLogin">退出登录</view>-->
 </view>

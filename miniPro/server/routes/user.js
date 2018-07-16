@@ -12,9 +12,9 @@ router.get('/ping', function (req, res) {
 router.post('/', async (req, res) => {
     //console.log("user", req);
     try {
-        console.log("Receive code",req.body.code)
+        console.log("Receive code",req.body)
         let authUrl = `https://api.weixin.qq.com/sns/jscode2session?appid=${Appconfig.appId}&secret=${Appconfig.appSecret}&js_code=${req.body.code}&grant_type=authorization_code`;
-        console.log("authUrl", authUrl);
+        //console.log("authUrl", authUrl);
     
         //res.send(401); //test failure case
         let resp = await axios({
@@ -25,8 +25,26 @@ router.post('/', async (req, res) => {
             }
           });
           //console.log("resp", resp.status, resp.data);
-          console.log("openid", resp.data.openid);
-          console.log("session_key", resp.data.session_key);
+          // console.log("openid", resp.data.openid);
+          // console.log("session_key", resp.data.session_key);
+
+          // console.log("Receive session_key", req.body.sess);
+          // //console.log("user",Appconfig);
+          // var pc = new WXBizDataCrypt(Appconfig.appId, resp.data.session_key)
+          // let rawData = req.body.loginData.encryptedData
+          // let iv = req.body.loginData.encryptedData
+          // console.log("rawData", rawData)
+          // console.log("iv", iv)
+          // console.log("Decrypting", rawData, iv)
+          // let decryptData = pc.decryptData(rawData,iv)
+          
+          // console.log('\x1b[41m', decryptData)
+          // decryptData.openid = resp.data.openid
+          // decryptData.session_key = resp.data.session_key
+
+          // res.json(decryptData);
+
+
           let data = {
               openid:resp.data.openid,
               session_key: resp.data.session_key,
@@ -47,12 +65,12 @@ router.post('/validate', async (req, res) => {
       var pc = new WXBizDataCrypt(Appconfig.appId, req.body.sess)
       let rawData = req.body.encryptedData
       let iv = req.body.iv
-      console.log("Decrypting", rawData, iv)
+      //console.log("Decrypting", rawData, iv)
       let decryptData = pc.decryptData(rawData,iv)
       
-      console.log('\x1b[41m', decryptData);
+      console.log('receive login:', decryptData);
       res.json(decryptData);
-  } catch (error) {
+} catch (error) {
       console.log("catchError", error);
   }
 

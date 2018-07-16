@@ -19,7 +19,8 @@ const AuthUtils = {
           success: resp => {
             console.log("session key", resp.data.session_key)
             wx.setStorageSync('session', resp.data.session_key)
-            AuthUtils.checkShareInfo(loginOptions, resp.data.session_key)
+            //AuthUtils.checkShareInfo(loginOptions, resp.data.session_key)
+            this.localGetUserInfo( resp.data.session_key)
           },
           fail: res => {
             console.log("login request", res)
@@ -31,6 +32,10 @@ const AuthUtils = {
       }
     });
 
+ 
+  },
+
+   localGetUserInfo(sess_key){
     wx.getSetting({
       success: res => {
         console.log("getSetting", res);
@@ -39,10 +44,17 @@ const AuthUtils = {
           // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
           wx.getUserInfo({
             success: res => {
+              console.log("userInfo", res)
               // 可以将 res 发送给后台解码出 unionId
               app.globalData.userInfo = res.userInfo
+              let options = {
+                encryptedData:res.encryptedData,
+                iv: res.iv,
+                sess: sess_key
+              }
+              this.decrypUserInfo(options)
               // this.saveUserInfo(res.userInfo)
-
+              wx.setStorageSync('userInfo', app.globalData.userInfo );
               // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
               // 所以此处加入 callback 以防止这种情况
               if (app.userInfoReadyCallback) {
@@ -53,7 +65,8 @@ const AuthUtils = {
         }
       }
     })
-  },
+
+   },
 
   checkShareInfo: function (loginOptions, session_key) {
     console.log('start checkShareInfo', loginOptions, session_key)
@@ -83,6 +96,26 @@ const AuthUtils = {
     })
   },
 
+  decrypUserInfo(res){
+    console.log("paramter", res)
+    wx.request({
+      url: `${AppConfig.apiUrl}user/validate`,
+      data: { encryptedData: res.encryptedData, iv: res.iv, sess:res.sess },
+      method: 'POST',
+      header: {
+        'Content-Type': 'application/json',
+      },
+      success: resp => {
+        console.log("getUserInfo", resp.data)
+      },
+      fail: res => {
+        console.log("login request", res)
+      },
+      complete: res => {
+        console.log("login request", res)
+      }
+    })
+  },
   // to server
   saveUserInfo(userInfo) {
     if (!userInfo.openid) {
