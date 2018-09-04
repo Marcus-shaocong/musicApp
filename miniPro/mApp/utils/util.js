@@ -24,6 +24,7 @@ function formatNumber(n) {
  * 封封微信的的request
  */
 function request(url, data = {}, method = "GET") {
+  console.log("request.url", url);
   return new Promise(function (resolve, reject) {
     wx.request({
       url: url,
@@ -34,7 +35,7 @@ function request(url, data = {}, method = "GET") {
         'X-Litemall-Token': wx.getStorageSync('token')
       },
       success: function (res) {
-
+        console.log("request.res", res)
         if (res.statusCode == 200) {
 
           if (res.data.errno == 401) {

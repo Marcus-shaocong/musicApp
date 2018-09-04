@@ -6,7 +6,7 @@ App({
   onLaunch: function (loginOptions) {
     var thiz = this;
     console.log("onLaunch", loginOptions)
-    AuthUtils.launchLogin(loginOptions)
+    //AuthUtils.launchLogin(loginOptions)
   },
 
   globalData: {

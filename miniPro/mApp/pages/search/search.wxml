@@ -1,0 +1,70 @@
+<scroll-view class="no-container" style="height: 100%;">
+  <view class="search-header">
+    <view class="input-box">
+      <image class="icon" src="/images/icons/search.png"></image>
+      <input name="input" class="keywrod" focus="true" value="{{keyword}}" confirm-type="search" bindinput="inputChange" bindfocus="inputFocus" bindconfirm="onKeywordConfirm" bindblur="inputblur" placeholder="{{defaultKeyword.keyword}}" />
+      <image class="del" wx:if="{{keyword}}" bindtap="clearKeyword" src="/images/icons/delete_search.png"></image>
+    </view>
+    <view class="right {{isCancel?'no-color':'green-color'}}" bindtap="closeSearch">取消</view>
+  </view>
+  <view class="no-search" wx:if="{{ !searchStatus}}">
+      <view class="search-keywords search-history" wx:if="{{!keyword  && historyKeyword.length}}">
+    <view class="h">
+      <text class="title">历史记录</text>
+      <image class="icon" bindtap="clearHistory" src="images/icons/clear_history.png"></image>
+    </view>
+    <view class="b">
+      <view class="item" bindtap="onKeywordTap" data-keyword="{{item.keyword}}" wx:for="{{historyKeyword}}" wx:key="keyword" hover-class="navigator-hover">{{item.keyword}}</view>
+    </view>
+  </view>
+  <view class="search-keywords search-hot" wx:if="{{!keyword && hotKeyword.length}}">
+    <view class="h">
+      <text class="title">热门搜索</text>
+    </view>
+    <view class="b">
+      <view class="item {{item.is_hot === 1 ? 'active' : ''}}" hover-class="navigator-hover" bindtap="onKeywordTap" data-keyword="{{item.keyword}}" wx:for="{{hotKeyword}}" wx:key="id">{{item.keyword}}</view>
+    </view>
+  </view>
+  <view class="shelper-list" wx:if="{{keyword}}">
+    <view class="item" hover-class="navigator-hover" wx:for="{{helpKeyword}}" wx:key="id" bindtap="onKeywordTap" data-keyword="{{item}}">{{item}}</view>
+  </view>
+  </view>
+
+  <view class="search-result" wx:if="{{ searchStatus && goodsList.length}}">
+  <view class="b">
+    <navigator class="s-item" url="/pages/mplayer/mplayer?id={{item.id}}"  wx:for="{{goodsList}}" wx:for-index="index" wx:for-item="item" wx:key="id">
+    <view class='s-music-item'>
+    <view class='s-image-container'>
+    <view class='s-img'>
+        <image class="s-cover" src="{{item.listPicUrl}}" mode="aspectFit"></image>
+    </view>
+        <view class="s-img">
+      <view class="s-right">
+          <view class="singer-text">
+            <text class="singer-name">{{item.name}}</text>
+            <text class="singer-desc">{{item.singer}}</text>
+          </view>
+          </view>
+      </view>
+
+      <view class='s-hard-level'>
+          <text class="s-hard-index">难度指数：</text>
+          <block wx:for="{{item.hardLevel}}" wx:key="i">
+            <image class="s-hard-imge" src="/images/icons/star1.png"></image>
+          </block>
+          <block wx:for="{{5-item.hardLevel}}" wx:key="j">
+            <image class="s-hard-imge" src="/images/icons/star.png"></image>
+          </block>
+        </view>
+    </view>
+    </view>
+    </navigator>
+  </view>
+
+  </view>
+
+  <view class="search-result-empty" wx:if="{{!goodsList.length && searchStatus}}">
+    <image class="icon" src="http://yanxuan.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/noSearchResult-7572a94f32.png"></image>
+    <text class="text">没有找到你要搜索的歌曲</text>
+  </view>
+</scroll-view>

@@ -13,7 +13,8 @@ module.exports = {
       categoryId: 10010,
       gallery: [], // 系列相关图片
       listPicUrl: "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=976975328,2385022262&fm=27&gp=0.jpg",
-      src: ""
+      src: "",
+      hardLevel:2
     },
     {
       id: 10021,
